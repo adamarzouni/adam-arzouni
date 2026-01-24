@@ -34,14 +34,14 @@
 
 <!-- Hero Section -->
 <header class="header section">
-  <h1>Adam Arzouni</h1>
-  <p class="en show">Mechanical Engineer • Aerospace • Creative Technologist</p>
-  <p class="fr">Ingénieur Mécanique • Aérospatial • Créatif Technologique</p>
-  <img class="profile-img" src="images/me.jpg" alt="Adam Arzouni">
+  <h1 class="fade-in">Adam Arzouni</h1>
+  <p class="en show fade-in">Mechanical Engineer • Aerospace • Creative Technologist</p>
+  <p class="fr fade-in">Ingénieur Mécanique • Aérospatial • Créatif Technologique</p>
+  <img class="profile-img fade-in" src="images/me.jpg" alt="Adam Arzouni">
 </header>
 
 <!-- About Section -->
-<section id="about" class="section">
+<section id="about" class="section fade-in">
   <h2 class="section-header en show">About Me</h2>
   <h2 class="section-header fr">À propos</h2>
   <p class="en show">
@@ -53,24 +53,21 @@
 </section>
 
 <!-- Projects Section -->
-<section id="projects" class="section">
+<section id="projects" class="section fade-in">
   <h2 class="section-header en show">Projects</h2>
   <h2 class="section-header fr">Projets</h2>
 
   <div class="projects-grid">
-    <!-- Wedding Project -->
     <div class="project-card" onclick="openProject('wedding')">
       <img src="images/project1-icon.png" alt="Wedding Project Icon">
       <p>Wedding Rotary Phone</p>
     </div>
 
-    <!-- Samsung TV App -->
     <div class="project-card" onclick="openProject('tvapp')">
       <img src="images/project2-icon.png" alt="TV App Icon">
       <p>Samsung TV App</p>
     </div>
 
-    <!-- Photography -->
     <div class="project-card" onclick="openProject('photography')">
       <img src="images/project3-icon.png" alt="Photography Icon">
       <p>Photography</p>
@@ -79,7 +76,7 @@
 </section>
 
 <!-- Experience Section -->
-<section id="experience" class="section">
+<section id="experience" class="section fade-in">
   <h2 class="section-header en show">Experience</h2>
   <h2 class="section-header fr">Expérience</h2>
   <b>Pratt & Whitney Canada – Account Manager</b>
@@ -87,7 +84,7 @@
 </section>
 
 <!-- Contact Section -->
-<section id="contact" class="section">
+<section id="contact" class="section fade-in">
   <h2 class="section-header en show">Contact</h2>
   <h2 class="section-header fr">Contact</h2>
 
@@ -125,98 +122,6 @@
 <!-- Back to Top -->
 <button id="topBtn"><i class="fas fa-arrow-up"></i></button>
 
-<!-- Scripts -->
-<script>
-// Dark/Light Mode
-function toggleMode(){
-  document.body.classList.toggle("light");
-}
-
-// Language Toggle
-let english = true;
-function toggleLang(){
-  english = !english;
-  document.querySelectorAll(".en").forEach(e=>e.classList.toggle("show", english));
-  document.querySelectorAll(".fr").forEach(f=>f.classList.toggle("show", !english));
-}
-
-// Navigation Scroll
-function go(id){
-  document.getElementById(id).scrollIntoView({behavior:"smooth"});
-}
-
-// Scroll fade-in
-const sections = document.querySelectorAll('.section, .card, .header, .project-card');
-const observer = new IntersectionObserver((entries)=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting) entry.target.classList.add('visible');
-    else entry.target.classList.remove('visible');
-  });
-},{threshold:0.2});
-sections.forEach(sec=>observer.observe(sec));
-
-// Back to top
-const topBtn = document.getElementById("topBtn");
-window.onscroll = () => topBtn.style.display = window.scrollY>400?"block":"none";
-topBtn.addEventListener("click", ()=> window.scrollTo({top:0, behavior:"smooth"}));
-
-// Project Data
-const projectsData = {
-  wedding:{
-    title:"Wedding Rotary Phone",
-    desc:"Transformed an old rotary phone into a recording station using Arduino + Teensy. Guests could leave voice messages for the wedding.",
-    images:["images/wedding1.jpg","images/wedding2.jpg"]
-  },
-  tvapp:{
-    title:"Samsung TV App",
-    desc:"Developed a Tizen-based smart TV app with interactive content browsing.",
-    images:["images/tvapp1.jpg","images/tvapp2.jpg"]
-  },
-  photography:{
-    title:"Photography",
-    desc:"Creative photography projects showcasing landscapes, portraits, and experimental work.",
-    images:["images/photo1.jpg","images/photo2.jpg"]
-  }
-};
-
-// Full-page modal
-let currentProject = null;
-let currentImageIndex = 0;
-
-function openProject(id){
-  const modal = document.getElementById("projectModal");
-  modal.style.display = "block";
-  currentProject = projectsData[id];
-  currentImageIndex = 0;
-  document.getElementById("modal-title").innerText = currentProject.title;
-  document.getElementById("modal-desc").innerText = currentProject.desc;
-  document.getElementById("modal-main-img").src = currentProject.images[currentImageIndex];
-}
-
-function changeImage(direction){
-  if(!currentProject) return;
-  currentImageIndex += direction;
-  if(currentImageIndex < 0) currentImageIndex = currentProject.images.length - 1;
-  if(currentImageIndex >= currentProject.images.length) currentImageIndex = 0;
-  document.getElementById("modal-main-img").src = currentProject.images[currentImageIndex];
-}
-
-function closeProject(){
-  document.getElementById("projectModal").style.display = "none";
-  currentProject = null;
-}
-
-// Close modal on outside click
-window.onclick = function(e){
-  if(e.target==document.getElementById("projectModal")) closeProject();
-}
-
-// Force English default
-window.onload = ()=>{
-  document.querySelectorAll(".en").forEach(e=>e.classList.add("show"));
-  document.querySelectorAll(".fr").forEach(f=>f.classList.remove("show"));
-}
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>
