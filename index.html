@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio.Pro | Luxury Edition</title>
+    <title>Portfolio.Pro | Creative Developer</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
@@ -34,12 +34,11 @@
             <div class="about-container">
                 <div class="about-image">
                     <img src="me.jpg" alt="My Portrait" class="profile-img">
-                    <div class="image-overlay"></div>
                 </div>
                 <div class="about-text">
                     <h2 class="gold-text">About Me</h2>
-                    <h3>Designing the future of the web, one pixel at a time.</h3>
-                    <p>I am a creative developer specializing in building high-performance, visually stunning digital experiences. My approach combines technical precision with a "vibe-centric" design philosophy.</p>
+                    <h3>Designing the future of the web.</h3>
+                    <p>I am a creative developer specializing in building high-performance, visually stunning digital experiences. I blend technical logic with luxury design.</p>
                     <div class="stats">
                         <div class="stat-item"><strong>5+</strong><span>Years Exp.</span></div>
                         <div class="stat-item"><strong>40+</strong><span>Projects</span></div>
@@ -51,16 +50,16 @@
         <section id="work" class="section reveal">
             <h2 class="section-header">Selected Work</h2>
             <div class="bento-grid">
-                <div class="bento-item large" onclick="openProject('Premium SaaS')">
+                <div class="bento-item large" onclick="openProject('Premium SaaS', 'Detailed look at my high-end dashboard.')">
                     <div class="card-content"><h3>Lux Dashboard</h3><p>Gold Tier Analytics</p></div>
                 </div>
-                <div class="bento-item" onclick="openProject('Luxury E-com')">
+                <div class="bento-item" onclick="openProject('Elite Shop', 'Minimalist luxury e-commerce.')">
                     <div class="card-content"><h3>Elite Shop</h3></div>
                 </div>
-                <div class="bento-item" onclick="openProject('Crypto')">
+                <div class="bento-item" onclick="openProject('Gold Wallet', 'Secure crypto management.')">
                     <div class="card-content"><h3>Gold Wallet</h3></div>
                 </div>
-                <div class="bento-item wide" onclick="openProject('Studio')">
+                <div class="bento-item wide" onclick="openProject('Motion Studio', 'Advanced UI motion graphics.')">
                     <div class="card-content"><h3>Motion Studio</h3><p>Premium UI</p></div>
                 </div>
             </div>
@@ -68,16 +67,35 @@
 
         <section id="contact" class="section reveal">
             <div class="contact-box">
-                <h2 class="gold-text">Get In Touch</h2>
+                <h2 class="section-header en show gold-text">Contact</h2>
+                <h2 class="section-header fr gold-text">Contact</h2>
+                <h3>Ready to start a project together?</h3>
+                <p>I'd love to work with you. Fill out the form below:</p>
                 <form action="https://formspree.io/f/xzdejweq" method="POST" class="contact-form">
+                    <label for="name">Name</label>
                     <input name="name" placeholder="Your Name" required>
+                    <label for="email">Email</label>
                     <input name="email" placeholder="Your Email" type="email" required>
+                    <label for="message">Message</label>
                     <textarea name="message" placeholder="Your Message" required></textarea>
-                    <button type="submit" class="gold-bg">Send Message</button>
+                    <button type="submit" class="gold-bg"><i class="fas fa-paper-plane"></i> Send</button>
                 </form>
             </div>
         </section>
     </main>
+
+    <div id="projectModal" class="modal-full">
+        <div class="modal-full-content">
+            <span class="close" onclick="closeProject()">&times;</span>
+            <h2 id="modal-title" class="gold-text"></h2>
+            <p id="modal-desc"></p>
+            <div class="gallery">
+                <button class="prev" onclick="changeImage(-1)"><i class="fas fa-chevron-left"></i></button>
+                <img id="modal-main-img" src="https://via.placeholder.com/800x450" alt="Project Image">
+                <button class="next" onclick="changeImage(1)"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </div>
 
     <button id="topBtn" class="gold-bg"><i class="fas fa-arrow-up"></i></button>
 
