@@ -3,20 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adam Arzouni | Mechanical Engineer</title>
+    <title>Adam Arzouni | Creative Developer</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="dark-mode lang-en"> <nav id="navbar">
+<body class="dark-mode lang-en">
+
+    <nav id="navbar">
         <div class="logo">ADAM<span class="mustard-text">ARZOUNI</span></div>
         <div class="nav-links">
             <a href="#home" class="en">Home</a><a href="#home" class="fr">Accueil</a>
             <a href="#about" class="en">About</a><a href="#about" class="fr">À Propos</a>
             <a href="#work" class="en">Work</a><a href="#work" class="fr">Projets</a>
             
-            <button id="lang-toggle" class="nav-btn">FR</button>
-            <button id="theme-toggle" class="nav-btn"><i class="fas fa-moon"></i></button>
+            <div class="controls">
+                <button id="lang-toggle" class="nav-btn">FR</button>
+                <button id="theme-toggle" class="nav-btn"><i class="fas fa-moon"></i></button>
+            </div>
             
             <a href="#contact" class="btn-primary mustard-bg en">Hire Me</a>
             <a href="#contact" class="btn-primary mustard-bg fr">Contact</a>
@@ -28,10 +32,10 @@
             <div class="hero-content">
                 <h1 class="reveal">
                     <span class="en">Building Digital <br><span class="mustard-gradient">Experiences.</span></span>
-                    <span class="fr">Créateur d'Expériences <br><span class="mustard-gradient">Digitales.</span></span>
+                    <span class="fr">Créer des <br><span class="mustard-gradient">Expériences.</span></span>
                 </h1>
-                <p class="reveal en">High-end Web Development with a focus on luxury aesthetics.</p>
-                <p class="reveal fr">Développement Web haut de gamme axé sur l'esthétique de luxe.</p>
+                <p class="reveal en">Creative developer focusing on high-end performance and luxury aesthetics.</p>
+                <p class="reveal fr">Développeur créatif axé sur la performance et l'esthétique haut de gamme.</p>
                 <a href="#about" class="explore-btn reveal">
                     <span class="en">Explore <i class="fas fa-arrow-down"></i></span>
                     <span class="fr">Explorer <i class="fas fa-arrow-down"></i></span>
@@ -39,7 +43,7 @@
             </div>
         </section>
 
-        <div class="section-divider"></div>
+        <div class="horizontal-line"></div>
 
         <section id="about" class="section reveal">
             <div class="about-container">
@@ -48,50 +52,51 @@
                 </div>
                 <div class="about-text">
                     <h2 class="mustard-text">About Me</h2>
-                    <h3 class="en">Designing the future of the web.</h3>
-                    <h3 class="fr">Concevoir le futur du web.</h3>
-                    <p class="en">I am Adam Arzouni, a creative developer specializing in building high-performance, visually stunning digital experiences.</p>
-                    <p class="fr">Je suis Adam Arzouni, un développeur créatif spécialisé dans la création d'expériences numériques performantes et visuellement époustouflantes.</p>
+                    <h3 class="en">Adam Arzouni — Designer & Developer</h3>
+                    <h3 class="fr">Adam Arzouni — Designer & Développeur</h3>
+                    <p class="en">I specialize in turning complex ideas into minimalist, high-impact digital products. My work is defined by precision and the "mustard" touch.</p>
+                    <p class="fr">Je me spécialise dans la transformation d'idées complexes en produits numériques minimalistes et percutants.</p>
                     <div class="stats">
                         <div class="stat-item"><strong>5+</strong><span class="en">Years</span><span class="fr">Ans</span></div>
-                        <div class="stat-item"><strong>40+</strong><span>Projects</span></div>
+                        <div class="stat-item"><strong>50+</strong><span>Clients</span></div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <div class="section-divider"></div>
+        <div class="horizontal-line"></div>
 
         <section id="work" class="section reveal">
-            <h2 class="section-header en">Selected Work</h2>
-            <h2 class="section-header fr">Projets Sélectionnés</h2>
+            <h2 class="section-header en">Featured Work</h2>
+            <h2 class="section-header fr">Projets Vedettes</h2>
             <div class="bento-grid">
-                <div class="bento-item large" onclick="openProject('Premium SaaS')">
-                    <div class="card-content"><h3>Lux Dashboard</h3><p>Mustard Tier Analytics</p></div>
+                <div class="bento-item large" onclick="openProject('AI Platform')">
+                    <div class="card-content"><h3>AI Platform</h3><p>Enterprise SaaS</p></div>
                 </div>
-                <div class="bento-item" onclick="openProject('Elite Shop')">
-                    <div class="card-content"><h3>Elite Shop</h3></div>
+                <div class="bento-item" onclick="openProject('E-commerce')">
+                    <div class="card-content"><h3>Lux Store</h3></div>
                 </div>
-                <div class="bento-item" onclick="openProject('Secure Wallet')">
-                    <div class="card-content"><h3>Finance App</h3></div>
+                <div class="bento-item" onclick="openProject('Branding')">
+                    <div class="card-content"><h3>Identity</h3></div>
                 </div>
-                <div class="bento-item wide" onclick="openProject('Motion Studio')">
-                    <div class="card-content"><h3>Motion Studio</h3><p>Premium UI</p></div>
+                <div class="bento-item wide" onclick="openProject('Mobile App')">
+                    <div class="card-content"><h3>Swift App</h3><p>iOS/Android</p></div>
                 </div>
             </div>
         </section>
 
-        <div class="section-divider"></div>
+        <div class="horizontal-line"></div>
 
         <section id="contact" class="section reveal">
             <div class="contact-box">
-                <h2 class="mustard-text en">Contact Me</h2>
-                <h2 class="mustard-text fr">Contactez-moi</h2>
+                <h2 class="mustard-text en">Get in Touch</h2>
+                <h2 class="mustard-text fr">Me Contacter</h2>
                 <form action="https://formspree.io/f/xzdejweq" method="POST" class="contact-form">
-                    <input name="name" placeholder="Name / Nom" required>
+                    <input name="name" placeholder="Name" required>
                     <input name="email" placeholder="Email" type="email" required>
-                    <textarea name="message" placeholder="Your Message / Votre Message" required></textarea>
-                    <button type="submit" class="mustard-bg">Send / Envoyer</button>
+                    <textarea name="message" placeholder="Message" required></textarea>
+                    <button type="submit" class="mustard-bg en">Send Message</button>
+                    <button type="submit" class="mustard-bg fr">Envoyer</button>
                 </form>
             </div>
         </section>
