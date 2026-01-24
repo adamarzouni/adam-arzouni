@@ -16,13 +16,13 @@
 </head>
 <body>
 
-<!-- ================== TOGGLES ================== -->
+<!-- TOGGLES -->
 <div class="theme-switch" onclick="toggleMode()">
   <i class="fas fa-lightbulb"></i>
 </div>
 <div class="lang-switch" onclick="toggleLang()">EN / FR</div>
 
-<!-- ================== NAVIGATION ================== -->
+<!-- NAVIGATION -->
 <nav class="top-nav">
   <button onclick="goToSection('about')">About</button>
   <button onclick="goToSection('projects')">Projects</button>
@@ -32,7 +32,7 @@
 
 <main>
 
-  <!-- ===== HERO / HEADER ===== -->
+  <!-- HERO / HEADER -->
   <header class="header section fade-in">
     <h1 class="fade-in">Adam Arzouni</h1>
     <p class="en show fade-in">Mechanical Engineer • Aerospace • Creative Technologist</p>
@@ -40,8 +40,8 @@
     <img class="profile-img fade-in" src="images/me.jpg" alt="Adam Arzouni">
   </header>
 
-  <!-- ===== ABOUT ===== -->
-  <section id="about" class="section fade-in">
+  <!-- ABOUT -->
+  <section id="about" class="section fade-in glass-section">
     <h2 class="section-header en show">About Me</h2>
     <h2 class="section-header fr">À propos</h2>
     <p class="en show">
@@ -50,13 +50,12 @@
     <p class="fr">
       Ingénieur mécanique basé à Montréal. Je combine l’ingénierie aérospatiale avec la technologie créative — des projets Arduino aux applications TV et à la photographie.
     </p>
-    <!-- CV Download -->
     <a href="https://raw.githubusercontent.com/adamarzouni/adam-arzouni/main/documents/Adam_Arzouni_CV.pdf" download class="cv-btn">
-      <i class="fas fa-file-download"></i> Download CV
+      <i class="fas fa-file-download"></i> <span class="en show">Download CV</span><span class="fr">Télécharger CV</span>
     </a>
   </section>
 
-  <!-- ===== PROJECTS ===== -->
+  <!-- PROJECTS -->
   <section id="projects" class="section fade-in">
     <h2 class="section-header en show">Projects</h2>
     <h2 class="section-header fr">Projets</h2>
@@ -64,55 +63,54 @@
     <div class="projects-grid">
       <div class="project-card" onclick="openProject('wedding')">
         <i class="fas fa-phone-alt fa-3x"></i>
-        <p>Wedding Rotary Phone</p>
+        <h3>Wedding Rotary Phone</h3>
       </div>
 
       <div class="project-card" onclick="openProject('tvapp')">
         <i class="fas fa-tv fa-3x"></i>
-        <p>Samsung TV App</p>
+        <h3>Samsung TV App</h3>
       </div>
 
       <div class="project-card" onclick="openProject('photography')">
         <i class="fas fa-camera-retro fa-3x"></i>
-        <p>Photography</p>
+        <h3>Photography</h3>
       </div>
     </div>
   </section>
 
-  <!-- ===== EXPERIENCE ===== -->
-  <section id="experience" class="section fade-in">
+  <!-- EXPERIENCE -->
+  <section id="experience" class="section fade-in glass-section">
     <h2 class="section-header en show">Experience</h2>
     <h2 class="section-header fr">Expérience</h2>
-    <div class="experience-item">
+    <div class="experience-box">
       <h3>Pratt & Whitney Canada – Account Manager</h3>
       <p>Managed aerospace projects, coordinated engineering teams, and maintained strong client relationships. Experience includes project management, technical consulting, and creative tech integration.</p>
     </div>
   </section>
 
-  <!-- ===== CONTACT ===== -->
-  <section id="contact" class="section fade-in">
+  <!-- CONTACT -->
+  <section id="contact" class="section fade-in glass-section">
+    <h2 class="section-header en show">Contact</h2>
+    <h2 class="section-header fr">Contact</h2>
     <div class="contact-box">
-      <h2 class="section-header en show">Contact</h2>
-      <h2 class="section-header fr">Contact</h2>
-      <h3>Ready to start a project together?</h3>
-      <p>I'd love to work with you. Fill out the form below to tell me more:</p>
+      <h3><span class="en show">Ready to start a project together?</span><span class="fr">Prêt à commencer un projet ensemble ?</span></h3>
       <form action="https://formspree.io/f/xzdejweq" method="POST" class="contact-form">
-        <label for="name">Name</label>
+        <label><span class="en show">Name</span><span class="fr">Nom</span></label>
         <input name="name" placeholder="Your Name" required>
-        <label for="email">Email</label>
+        <label><span class="en show">Email</span><span class="fr">Email</span></label>
         <input name="email" placeholder="Your Email" type="email" required>
-        <label for="message">Message</label>
+        <label><span class="en show">Message</span><span class="fr">Message</span></label>
         <textarea name="message" placeholder="Your Message" required></textarea>
-        <button type="submit"><i class="fas fa-paper-plane"></i> Send</button>
+        <button type="submit"><i class="fas fa-paper-plane"></i><span class="en show">Send</span><span class="fr">Envoyer</span></button>
       </form>
     </div>
   </section>
 
 </main>
 
-<!-- ================== PROJECT MODAL ================== -->
+<!-- PROJECT MODAL -->
 <div id="projectModal" class="modal-full">
-  <div class="modal-full-content">
+  <div class="modal-content fade-in">
     <span class="close" onclick="closeProject()">&times;</span>
     <h2 id="modal-title" class="en show"></h2>
     <h2 id="modal-title-fr" class="fr"></h2>
@@ -126,7 +124,6 @@
   </div>
 </div>
 
-<!-- ================== BACK TO TOP ================== -->
 <button id="topBtn"><i class="fas fa-arrow-up"></i></button>
 
 <script src="script.js"></script>
