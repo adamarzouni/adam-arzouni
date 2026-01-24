@@ -3,101 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio.Pro | Creative Developer</title>
+    <title>Adam Arzouni | Mechanical Engineer</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="dark-mode">
-
-    <nav id="navbar">
-        <div class="logo">PORTFOLIO<span class="gold-text">.</span>PRO</div>
+<body class="dark-mode lang-en"> <nav id="navbar">
+        <div class="logo">ADAM<span class="mustard-text">ARZOUNI</span></div>
         <div class="nav-links">
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#work">Work</a>
-            <button id="theme-toggle"><i class="fas fa-moon"></i></button>
-            <a href="#contact" class="btn-primary gold-bg">Hire Me</a>
+            <a href="#home" class="en">Home</a><a href="#home" class="fr">Accueil</a>
+            <a href="#about" class="en">About</a><a href="#about" class="fr">À Propos</a>
+            <a href="#work" class="en">Work</a><a href="#work" class="fr">Projets</a>
+            
+            <button id="lang-toggle" class="nav-btn">FR</button>
+            <button id="theme-toggle" class="nav-btn"><i class="fas fa-moon"></i></button>
+            
+            <a href="#contact" class="btn-primary mustard-bg en">Hire Me</a>
+            <a href="#contact" class="btn-primary mustard-bg fr">Contact</a>
         </div>
     </nav>
 
     <main>
         <section id="home" class="hero">
             <div class="hero-content">
-                <h1 class="reveal">Crafting Digital <br><span class="gold-gradient">Masterpieces.</span></h1>
-                <p class="reveal">High-end Web Development with a focus on luxury aesthetics.</p>
-                <a href="#about" class="explore-btn reveal">Explore My World <i class="fas fa-arrow-down"></i></a>
+                <h1 class="reveal">
+                    <span class="en">Building Digital <br><span class="mustard-gradient">Experiences.</span></span>
+                    <span class="fr">Créateur d'Expériences <br><span class="mustard-gradient">Digitales.</span></span>
+                </h1>
+                <p class="reveal en">High-end Web Development with a focus on luxury aesthetics.</p>
+                <p class="reveal fr">Développement Web haut de gamme axé sur l'esthétique de luxe.</p>
+                <a href="#about" class="explore-btn reveal">
+                    <span class="en">Explore <i class="fas fa-arrow-down"></i></span>
+                    <span class="fr">Explorer <i class="fas fa-arrow-down"></i></span>
+                </a>
             </div>
         </section>
+
+        <div class="section-divider"></div>
 
         <section id="about" class="section reveal">
             <div class="about-container">
                 <div class="about-image">
-                    <img src="me.jpg" alt="My Portrait" class="profile-img">
+                    <img src="images/me.jpg" alt="Adam Arzouni" class="profile-img">
                 </div>
                 <div class="about-text">
-                    <h2 class="gold-text">About Me</h2>
-                    <h3>Designing the future of the web.</h3>
-                    <p>I am a creative developer specializing in building high-performance, visually stunning digital experiences. I blend technical logic with luxury design.</p>
+                    <h2 class="mustard-text">About Me</h2>
+                    <h3 class="en">Designing the future of the web.</h3>
+                    <h3 class="fr">Concevoir le futur du web.</h3>
+                    <p class="en">I am Adam Arzouni, a creative developer specializing in building high-performance, visually stunning digital experiences.</p>
+                    <p class="fr">Je suis Adam Arzouni, un développeur créatif spécialisé dans la création d'expériences numériques performantes et visuellement époustouflantes.</p>
                     <div class="stats">
-                        <div class="stat-item"><strong>5+</strong><span>Years Exp.</span></div>
+                        <div class="stat-item"><strong>5+</strong><span class="en">Years</span><span class="fr">Ans</span></div>
                         <div class="stat-item"><strong>40+</strong><span>Projects</span></div>
                     </div>
                 </div>
             </div>
         </section>
 
+        <div class="section-divider"></div>
+
         <section id="work" class="section reveal">
-            <h2 class="section-header">Selected Work</h2>
+            <h2 class="section-header en">Selected Work</h2>
+            <h2 class="section-header fr">Projets Sélectionnés</h2>
             <div class="bento-grid">
-                <div class="bento-item large" onclick="openProject('Premium SaaS', 'Detailed look at my high-end dashboard.')">
-                    <div class="card-content"><h3>Lux Dashboard</h3><p>Gold Tier Analytics</p></div>
+                <div class="bento-item large" onclick="openProject('Premium SaaS')">
+                    <div class="card-content"><h3>Lux Dashboard</h3><p>Mustard Tier Analytics</p></div>
                 </div>
-                <div class="bento-item" onclick="openProject('Elite Shop', 'Minimalist luxury e-commerce.')">
+                <div class="bento-item" onclick="openProject('Elite Shop')">
                     <div class="card-content"><h3>Elite Shop</h3></div>
                 </div>
-                <div class="bento-item" onclick="openProject('Gold Wallet', 'Secure crypto management.')">
-                    <div class="card-content"><h3>Gold Wallet</h3></div>
+                <div class="bento-item" onclick="openProject('Secure Wallet')">
+                    <div class="card-content"><h3>Finance App</h3></div>
                 </div>
-                <div class="bento-item wide" onclick="openProject('Motion Studio', 'Advanced UI motion graphics.')">
+                <div class="bento-item wide" onclick="openProject('Motion Studio')">
                     <div class="card-content"><h3>Motion Studio</h3><p>Premium UI</p></div>
                 </div>
             </div>
         </section>
 
+        <div class="section-divider"></div>
+
         <section id="contact" class="section reveal">
             <div class="contact-box">
-                <h2 class="section-header en show gold-text">Contact</h2>
-                <h2 class="section-header fr gold-text">Contact</h2>
-                <h3>Ready to start a project together?</h3>
-                <p>I'd love to work with you. Fill out the form below:</p>
+                <h2 class="mustard-text en">Contact Me</h2>
+                <h2 class="mustard-text fr">Contactez-moi</h2>
                 <form action="https://formspree.io/f/xzdejweq" method="POST" class="contact-form">
-                    <label for="name">Name</label>
-                    <input name="name" placeholder="Your Name" required>
-                    <label for="email">Email</label>
-                    <input name="email" placeholder="Your Email" type="email" required>
-                    <label for="message">Message</label>
-                    <textarea name="message" placeholder="Your Message" required></textarea>
-                    <button type="submit" class="gold-bg"><i class="fas fa-paper-plane"></i> Send</button>
+                    <input name="name" placeholder="Name / Nom" required>
+                    <input name="email" placeholder="Email" type="email" required>
+                    <textarea name="message" placeholder="Your Message / Votre Message" required></textarea>
+                    <button type="submit" class="mustard-bg">Send / Envoyer</button>
                 </form>
             </div>
         </section>
     </main>
 
-    <div id="projectModal" class="modal-full">
-        <div class="modal-full-content">
-            <span class="close" onclick="closeProject()">&times;</span>
-            <h2 id="modal-title" class="gold-text"></h2>
-            <p id="modal-desc"></p>
-            <div class="gallery">
-                <button class="prev" onclick="changeImage(-1)"><i class="fas fa-chevron-left"></i></button>
-                <img id="modal-main-img" src="https://via.placeholder.com/800x450" alt="Project Image">
-                <button class="next" onclick="changeImage(1)"><i class="fas fa-chevron-right"></i></button>
-            </div>
-        </div>
-    </div>
-
-    <button id="topBtn" class="gold-bg"><i class="fas fa-arrow-up"></i></button>
+    <button id="topBtn" class="mustard-bg"><i class="fas fa-arrow-up"></i></button>
 
     <script src="script.js"></script>
 </body>
