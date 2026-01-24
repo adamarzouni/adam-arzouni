@@ -1,8 +1,7 @@
-// --- LANGUAGE TOGGLE ---
+// --- LANGUAGE SWITCHER ---
 const langBtn = document.getElementById('lang-toggle');
 langBtn.addEventListener('click', () => {
-    const isEn = document.body.classList.contains('lang-en');
-    if (isEn) {
+    if (document.body.classList.contains('lang-en')) {
         document.body.classList.replace('lang-en', 'lang-fr');
         langBtn.innerText = "EN";
     } else {
@@ -19,7 +18,7 @@ themeBtn.addEventListener('click', () => {
     icon.className = document.body.classList.contains('light') ? 'fas fa-sun' : 'fas fa-moon';
 });
 
-// --- SCROLL REVEAL (Loading while scrolling) ---
+// --- SCROLL REVEAL ---
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -30,14 +29,9 @@ const observer = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-// --- TOP BUTTON & SMOOTH SCROLL ---
+// --- BACK TO TOP ---
 const topBtn = document.getElementById('topBtn');
 window.onscroll = () => {
-    topBtn.style.display = window.scrollY > 600 ? "block" : "none";
+    topBtn.style.display = window.scrollY > 500 ? "block" : "none";
 };
 topBtn.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
-
-// --- PROJECT POPUP (SIMPLE) ---
-function openProject(name) {
-    alert("Project: " + name + "\nThis is where your project details or modal would load!");
-}
