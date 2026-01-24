@@ -4,6 +4,7 @@
   --text-dark:#fff;
   --text-light:#000;
   --accent:#00ffff;
+  --accent-hover:#00dddd;
 }
 
 body{
@@ -11,7 +12,7 @@ body{
   font-family:'Inter', sans-serif;
   background:var(--bg-dark);
   color:var(--text-dark);
-  transition:0.4s;
+  transition:0.5s;
 }
 
 body.light{
@@ -34,15 +35,17 @@ body.light{
 .header{
   padding:120px 20px;
   text-align:center;
-  background:
-    radial-gradient(circle at top, rgba(0,255,255,.12), transparent 60%),
-    linear-gradient(180deg,#0b0f14,#121212);
+  background:radial-gradient(circle at top, rgba(0,255,255,.12), transparent 60%), linear-gradient(180deg,#0b0f14,#121212);
 }
 body.light .header{
   background:linear-gradient(180deg,#f5f5f5,#fff);
 }
 
-h1{color:var(--accent);}
+h1{
+  color:var(--accent);
+  font-size:48px;
+  transition:0.5s;
+}
 body.light h1{color:#000;}
 
 .profile-img{
@@ -58,7 +61,7 @@ body.light h1{color:#000;}
   box-shadow:0 12px 35px rgba(0,255,255,0.7);
 }
 
-/* Nav */
+/* Top Nav */
 .top-nav{
   position:sticky;
   top:0;
@@ -89,14 +92,14 @@ body.light .top-nav{background:rgba(255,255,255,.95);}
 body.light .top-nav button{color:#000;}
 body.light .top-nav button:hover{background:#000;color:#fff;}
 
-/* Section headers */
+/* Section Headers */
 .section-header{
   font-size:32px;
   margin-bottom:40px;
   text-align:center;
 }
 
-/* Projects grid */
+/* Projects Grid */
 .projects-grid{
   display:flex;
   flex-wrap:wrap;
@@ -107,71 +110,28 @@ body.light .top-nav button:hover{background:#000;color:#fff;}
   width:160px;
   text-align:center;
   cursor:pointer;
-  transition:0.3s;
-}
-.project-card img{
-  width:100px;
-  height:100px;
+  padding:20px;
   border-radius:12px;
-  border:2px solid var(--accent);
+  transition:0.4s;
+  color:var(--accent);
+}
+.project-card i{
   transition:0.4s;
 }
-.project-card:hover img{
-  transform:scale(1.1);
-  box-shadow:0 8px 20px rgba(0,255,255,0.4);
+.project-card:hover i{
+  transform:scale(1.2);
+  text-shadow:0 0 15px var(--accent);
 }
+.project-card p{margin-top:10px; font-weight:500;}
 
-/* Full-page Modal & Gallery */
-.modal-full{
-  display:none;
-  position:fixed;
-  top:0; left:0;
-  width:100%; height:100%;
-  background:rgba(0,0,0,0.95);
-  z-index:1500;
-  overflow:auto;
-}
-.modal-full-content{
-  max-width:1000px;
-  margin:50px auto;
-  background:var(--bg-dark);
-  color:var(--text-dark);
-  padding:30px;
-  border-radius:12px;
-  position:relative;
-}
-body.light .modal-full-content{
-  background:var(--bg-light);
-  color:var(--text-light);
-}
-.modal-full-content h2{text-align:center; margin-bottom:20px;}
-.modal-full-content p{margin-bottom:30px; line-height:1.6;}
-.gallery{
+/* Contact Section */
+.contact-center{
   display:flex;
-  align-items:center;
+  flex-direction:column;
   justify-content:center;
-  gap:10px;
-  flex-wrap:wrap;
-}
-.gallery img{
-  max-width:80%;
-  max-height:500px;
-  border-radius:12px;
-}
-.gallery button{
-  background:none;
-  border:none;
-  color:var(--accent);
-  font-size:36px;
-  cursor:pointer;
-  transition:0.3s;
-}
-.gallery button:hover{color:#fff;}
-.close{
-  position:absolute;
-  top:15px; right:20px;
-  font-size:30px;
-  cursor:pointer;
+  align-items:center;
+  min-height:60vh;
+  text-align:center;
 }
 
 /* Contact Form */
@@ -179,7 +139,8 @@ body.light .modal-full-content{
   display:flex;
   flex-direction:column;
   gap:12px;
-  max-width:600px;
+  max-width:500px;
+  width:100%;
   margin-top:20px;
 }
 .contact-form input,
@@ -202,8 +163,9 @@ body.light .modal-full-content{
   color:#000;
   font-weight:600;
   cursor:pointer;
+  transition:0.3s;
 }
-.contact-form button:hover{background:#00dddd;}
+.contact-form button:hover{background:var(--accent-hover);}
 
 /* Toggle Buttons */
 .theme-switch{
@@ -221,9 +183,12 @@ body.light .modal-full-content{
   color:#000;
   box-shadow:0 4px 15px rgba(0,0,0,0.3);
   cursor:pointer;
+  transition:0.3s;
 }
 body.light .theme-switch{background:#000;color:#fff;}
+.theme-switch:hover{transform:scale(1.1);}
 
+/* Language Switch */
 .lang-switch{
   position:fixed;
   top:15px;
@@ -232,6 +197,7 @@ body.light .theme-switch{background:#000;color:#fff;}
   padding:10px 14px;
   border-radius:20px;
   cursor:pointer;
+  transition:0.3s;
 }
 .lang-switch:hover{background:var(--accent); color:#000;}
 
@@ -249,5 +215,6 @@ body.light .theme-switch{background:#000;color:#fff;}
   display:none;
   font-size:18px;
   box-shadow:0 4px 15px rgba(0,0,0,0.3);
+  transition:0.3s;
 }
 #topBtn:hover{transform:scale(1.1);}
