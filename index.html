@@ -3,87 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stunning Portfolio | Creative Developer</title>
+    <title>Portfolio.Pro | Creative Developer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
 </head>
-<body>
-
-    <nav id="navbar">
+<body class="dark-mode"> <nav id="navbar">
         <div class="logo">PORTFOLIO.PRO</div>
         <div class="nav-links">
             <a href="#home">Home</a>
             <a href="#work">Work</a>
-            <a href="#about">About</a>
+            <button id="theme-toggle"><i class="fas fa-moon"></i></button>
             <a href="#contact" class="btn-primary">Hire Me</a>
         </div>
     </nav>
 
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1 class="reveal">Building Digital <br><span>Experiences.</span></h1>
-            <p class="reveal">Web Developer & UI Designer specializing in high-end aesthetic apps.</p>
-        </div>
-        
-        <div class="marquee">
-            <div class="marquee-content">
-                <span>REACT</span> <span>TYPESCRIPT</span> <span>UI DESIGN</span> <span>NEXT.JS</span> 
-                <span>GLASSMORPHISM</span> <span>TAILWIND</span> <span>ANIMATION</span>
-                <span>REACT</span> <span>TYPESCRIPT</span> <span>UI DESIGN</span> <span>NEXT.JS</span> 
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1 class="reveal">Building Digital <br><span>Experiences.</span></h1>
+                <p class="reveal">Web Developer & UI Designer specializing in high-end aesthetic apps.</p>
+                <a href="#work" class="explore-btn reveal">Explore Work <i class="fas fa-arrow-down"></i></a>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="work" class="section">
-        <h2 class="section-title">Selected Projects</h2>
-        <div class="bento-grid">
-            <div class="bento-item large reveal">
-                <div class="card-content">
-                    <h3>AI Dashboard</h3>
-                    <p>Enterprise SaaS Platform</p>
+        <section id="work" class="section reveal">
+            <h2 class="section-header">Selected Work</h2>
+            <div class="bento-grid">
+                <div class="bento-item large" onclick="openProject('AI Dashboard')">
+                    <div class="card-content"><h3>AI Dashboard</h3><p>Enterprise SaaS</p></div>
+                </div>
+                <div class="bento-item" onclick="openProject('Crypto App')">
+                    <div class="card-content"><h3>Crypto App</h3></div>
+                </div>
+                <div class="bento-item" onclick="openProject('Minimal E-com')">
+                    <div class="card-content"><h3>Minimal E-com</h3></div>
+                </div>
+                <div class="bento-item wide" onclick="openProject('Creative Studio')">
+                    <div class="card-content"><h3>Creative Studio</h3><p>Motion Design</p></div>
                 </div>
             </div>
-            <div class="bento-item reveal">
-                <div class="card-content">
-                    <h3>Crypto App</h3>
-                </div>
-            </div>
-            <div class="bento-item reveal">
-                <div class="card-content">
-                    <h3>Minimal E-com</h3>
-                </div>
-            </div>
-            <div class="bento-item wide reveal">
-                <div class="card-content">
-                    <h3>Creative Studio Portfolio</h3>
-                    <p>Interactions & Motion</p>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="about" class="section">
-        <div class="about-container">
-            <div class="about-text reveal">
-                <h2>About Me</h2>
-                <p>I create functional art through code. Based on the "vibe coding" philosophy, I focus on the aesthetic and user experience first.</p>
+        <section id="contact" class="section reveal">
+            <div class="contact-box">
+                <h2 class="section-header en show">Contact</h2>
+                <h2 class="section-header fr">Contact</h2>
+                <h3>Ready to start a project together?</h3>
+                <p>I'd love to work with you. Fill out the form below to tell me more:</p>
+                <form action="https://formspree.io/f/xzdejweq" method="POST" class="contact-form">
+                    <label for="name">Name</label>
+                    <input name="name" id="name" placeholder="Your Name" required>
+                    <label for="email">Email</label>
+                    <input name="email" id="email" placeholder="Your Email" type="email" required>
+                    <label for="message">Message</label>
+                    <textarea name="message" id="message" placeholder="Your Message" required></textarea>
+                    <button type="submit"><i class="fas fa-paper-plane"></i> Send</button>
+                </form>
             </div>
-            <div class="about-image reveal">
-                <div class="image-placeholder"></div>
-            </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <footer id="contact">
-        <div class="footer-content">
-            <h2>Let's build something <span class="glow-text">extraordinary.</span></h2>
-            <div class="social-links">
-                <a href="#">Twitter</a>
-                <a href="#">GitHub</a>
-                <a href="#">LinkedIn</a>
+    <div id="projectModal" class="modal-full">
+        <div class="modal-full-content">
+            <span class="close" onclick="closeProject()">&times;</span>
+            <h2 id="modal-title"></h2>
+            <p id="modal-desc">This is a detailed description of the project and the tech stack used.</p>
+            <div class="gallery">
+                <button class="prev" onclick="changeImage(-1)"><i class="fas fa-chevron-left"></i></button>
+                <img id="modal-main-img" src="https://via.placeholder.com/800x450" alt="Project Image">
+                <button class="next" onclick="changeImage(1)"><i class="fas fa-chevron-right"></i></button>
             </div>
         </div>
-    </footer>
+    </div>
+
+    <button id="topBtn"><i class="fas fa-arrow-up"></i></button>
 
     <script src="script.js"></script>
 </body>
