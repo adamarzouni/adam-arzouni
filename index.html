@@ -16,8 +16,12 @@
 </head>
 <body>
 
-<!-- Theme & Language Toggles -->
-<div class="theme-switch" onclick="toggleMode()"><i class="fas fa-sun"></i><i class="fas fa-moon"></i></div>
+<!-- Dark/Light Toggle -->
+<div class="theme-switch" onclick="toggleMode()">
+  <i class="fas fa-lightbulb"></i>
+</div>
+
+<!-- Language Toggle -->
 <div class="lang-switch" onclick="toggleLang()">EN / FR</div>
 
 <!-- Navigation Tabs -->
@@ -38,54 +42,84 @@
 
 <!-- About Section -->
 <section id="about" class="section">
+  <h2 class="section-header en show">About Me</h2>
+  <h2 class="section-header fr">À propos</h2>
   <p class="en show">
-    Mechanical engineer based in Montreal. I mix aerospace engineering with creative technology — from Arduino builds to smart TV apps and creative projects.
+    Mechanical engineer based in Montreal. I combine aerospace engineering with creative technology — from Arduino builds to smart TV apps and photography projects.
   </p>
   <p class="fr">
-    Ingénieur mécanique basé à Montréal. Je combine l’ingénierie aérospatiale avec la technologie créative — des projets Arduino aux applications TV et créations artistiques.
+    Ingénieur mécanique basé à Montréal. Je combine l’ingénierie aérospatiale avec la technologie créative — des projets Arduino aux applications TV et à la photographie.
   </p>
 </section>
 
 <!-- Projects Section -->
 <section id="projects" class="section">
-  <div class="card">
-    <h3>Wedding Rotary Phone</h3>
-    <img src="images/wedding1.jpg" alt="Wedding Rotary Phone">
-    <p>Transformed an old rotary phone into a recording station using Arduino + Teensy, allowing guests to leave voice messages for the wedding.</p>
-  </div>
+  <h2 class="section-header en show">Projects</h2>
+  <h2 class="section-header fr">Projets</h2>
 
-  <div class="card">
-    <h3>Samsung TV App</h3>
-    <img src="images/tvapp1.jpg" alt="Samsung TV App">
-    <p>Created a Tizen-based smart TV application for interactive content browsing.</p>
-  </div>
+  <div class="projects-grid">
+    <!-- Wedding Project -->
+    <div class="project-card" onclick="openProject('wedding')">
+      <img src="images/project1-icon.png" alt="Wedding Project Icon">
+      <p>Wedding Rotary Phone</p>
+    </div>
 
-  <div class="card">
-    <h3>Photography</h3>
-    <img src="images/photo1.jpg" alt="Photography">
-    <img src="images/photo2.jpg" alt="Photography">
+    <!-- Samsung TV App -->
+    <div class="project-card" onclick="openProject('tvapp')">
+      <img src="images/project2-icon.png" alt="TV App Icon">
+      <p>Samsung TV App</p>
+    </div>
+
+    <!-- Photography -->
+    <div class="project-card" onclick="openProject('photography')">
+      <img src="images/project3-icon.png" alt="Photography Icon">
+      <p>Photography</p>
+    </div>
   </div>
 </section>
 
 <!-- Experience Section -->
 <section id="experience" class="section">
+  <h2 class="section-header en show">Experience</h2>
+  <h2 class="section-header fr">Expérience</h2>
+
   <b>Pratt & Whitney Canada – Account Manager</b>
   <p>Managed aerospace projects, coordinated engineering teams, and maintained strong client relationships. Experience includes project management, technical consulting, and creative tech integration.</p>
 </section>
 
 <!-- Contact Section -->
 <section id="contact" class="section">
-  <h2>Ready to start a project together?</h2>
+  <h2 class="section-header en show">Contact</h2>
+  <h2 class="section-header fr">Contact</h2>
+
+  <h3>Ready to start a project together?</h3>
   <p>I'd love to work with you. Fill out the form below to tell me more:</p>
-  <form action="https://formspree.io/f/xzdejweq" method="POST">
-    <input name="name" placeholder="Name" required>
-    <input name="email" placeholder="Email" type="email" required>
-    <textarea name="message" placeholder="Message" required></textarea>
-    <button type="submit">Send</button>
+
+  <form action="https://formspree.io/f/xzdejweq" method="POST" class="contact-form">
+    <label for="name">Name</label>
+    <input name="name" placeholder="Your Name" required>
+    
+    <label for="email">Email</label>
+    <input name="email" placeholder="Your Email" type="email" required>
+    
+    <label for="message">Message</label>
+    <textarea name="message" placeholder="Your Message" required></textarea>
+    
+    <button type="submit"><i class="fas fa-paper-plane"></i> Send</button>
   </form>
 </section>
 
-<!-- Back to Top Button -->
+<!-- Project Modal -->
+<div id="projectModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeProject()">&times;</span>
+    <h3 id="modal-title"></h3>
+    <p id="modal-desc"></p>
+    <div id="modal-images" class="modal-images"></div>
+  </div>
+</div>
+
+<!-- Back to Top -->
 <button id="topBtn"><i class="fas fa-arrow-up"></i></button>
 
 <!-- Scripts -->
@@ -105,12 +139,65 @@ function go(id){
   document.getElementById(id).scrollIntoView({behavior:"smooth"});
 }
 
-window.onscroll = () => {
-  document.getElementById("topBtn").style.display = window.scrollY > 400 ? "block" : "none";
+// Scroll fade-in
+const sections = document.querySelectorAll('.section, .card, .header');
+const observer = new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting) entry.target.classList.add('visible');
+    else entry.target.classList.remove('visible');
+  });
+},{threshold:0.2});
+sections.forEach(sec=>observer.observe(sec));
+
+// Back to top
+const topBtn = document.getElementById("topBtn");
+window.onscroll = () => topBtn.style.display = window.scrollY>400?"block":"none";
+topBtn.addEventListener("click", ()=> window.scrollTo({top:0, behavior:"smooth"}));
+
+// Projects Data
+const projectsData = {
+  wedding:{
+    title:"Wedding Rotary Phone",
+    desc:"Transformed an old rotary phone into a recording station using Arduino + Teensy. Guests could leave voice messages for the wedding.",
+    images:["images/wedding1.jpg","images/wedding2.jpg"]
+  },
+  tvapp:{
+    title:"Samsung TV App",
+    desc:"Developed a Tizen-based smart TV app with interactive content browsing.",
+    images:["images/tvapp1.jpg","images/tvapp2.jpg"]
+  },
+  photography:{
+    title:"Photography",
+    desc:"Creative photography projects showcasing landscapes, portraits, and experimental work.",
+    images:["images/photo1.jpg","images/photo2.jpg"]
+  }
+};
+
+function openProject(id){
+  const modal = document.getElementById("projectModal");
+  modal.style.display = "block";
+  document.getElementById("modal-title").innerText = projectsData[id].title;
+  document.getElementById("modal-desc").innerText = projectsData[id].desc;
+  const imgContainer = document.getElementById("modal-images");
+  imgContainer.innerHTML="";
+  projectsData[id].images.forEach(src=>{
+    const img=document.createElement("img");
+    img.src=src;
+    imgContainer.appendChild(img);
+  });
+}
+
+function closeProject(){
+  document.getElementById("projectModal").style.display = "none";
+}
+
+// Close modal on outside click
+window.onclick = function(e){
+  if(e.target==document.getElementById("projectModal")) closeProject();
 }
 
 // Force English default
-window.onload = () => {
+window.onload = ()=>{
   document.querySelectorAll(".en").forEach(e=>e.classList.add("show"));
 }
 </script>
