@@ -17,12 +17,10 @@
 <body>
 
 <!-- ================== TOGGLES ================== -->
-<!-- Dark/Light Mode Toggle -->
 <div class="theme-switch" onclick="toggleMode()">
   <i class="fas fa-lightbulb"></i>
 </div>
 
-<!-- Language Toggle -->
 <div class="lang-switch" onclick="toggleLang()">EN / FR</div>
 
 <!-- ================== NAVIGATION ================== -->
@@ -33,7 +31,6 @@
   <button onclick="goToSection('contact')">Contact</button>
 </nav>
 
-<!-- ================== MAIN CONTENT ================== -->
 <main>
 
   <!-- ===== HERO / HEADER ===== -->
@@ -62,19 +59,18 @@
     <h2 class="section-header fr">Projets</h2>
 
     <div class="projects-grid">
-      <!-- Project Card Template -->
       <div class="project-card" data-project="wedding" onclick="openProject('wedding')">
-        <img src="images/project1-icon.png" alt="Wedding Project Icon">
+        <i class="fas fa-phone-alt fa-3x"></i>
         <p>Wedding Rotary Phone</p>
       </div>
 
       <div class="project-card" data-project="tvapp" onclick="openProject('tvapp')">
-        <img src="images/project2-icon.png" alt="TV App Icon">
+        <i class="fas fa-tv fa-3x"></i>
         <p>Samsung TV App</p>
       </div>
 
       <div class="project-card" data-project="photography" onclick="openProject('photography')">
-        <img src="images/project3-icon.png" alt="Photography Icon">
+        <i class="fas fa-camera-retro fa-3x"></i>
         <p>Photography</p>
       </div>
     </div>
@@ -93,24 +89,26 @@
 
   <!-- ===== CONTACT SECTION ===== -->
   <section id="contact" class="section fade-in">
-    <h2 class="section-header en show">Contact</h2>
-    <h2 class="section-header fr">Contact</h2>
+    <div class="contact-center">
+      <h2 class="section-header en show">Contact</h2>
+      <h2 class="section-header fr">Contact</h2>
 
-    <h3>Ready to start a project together?</h3>
-    <p>I'd love to work with you. Fill out the form below to tell me more:</p>
+      <h3>Ready to start a project together?</h3>
+      <p>I'd love to work with you. Fill out the form below to tell me more:</p>
 
-    <form action="https://formspree.io/f/xzdejweq" method="POST" class="contact-form">
-      <label for="name">Name</label>
-      <input name="name" placeholder="Your Name" required>
+      <form action="https://formspree.io/f/xzdejweq" method="POST" class="contact-form">
+        <label for="name">Name</label>
+        <input name="name" placeholder="Your Name" required>
 
-      <label for="email">Email</label>
-      <input name="email" placeholder="Your Email" type="email" required>
+        <label for="email">Email</label>
+        <input name="email" placeholder="Your Email" type="email" required>
 
-      <label for="message">Message</label>
-      <textarea name="message" placeholder="Your Message" required></textarea>
+        <label for="message">Message</label>
+        <textarea name="message" placeholder="Your Message" required></textarea>
 
-      <button type="submit"><i class="fas fa-paper-plane"></i> Send</button>
-    </form>
+        <button type="submit"><i class="fas fa-paper-plane"></i> Send</button>
+      </form>
+    </div>
   </section>
 
 </main>
@@ -132,7 +130,6 @@
 <!-- ================== BACK TO TOP BUTTON ================== -->
 <button id="topBtn"><i class="fas fa-arrow-up"></i></button>
 
-<!-- ================== SCRIPT ================== -->
 <script src="script.js"></script>
 </body>
 </html>
