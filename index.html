@@ -14,14 +14,13 @@
 <!-- Custom CSS -->
 <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
 <!-- Theme & Language Toggles -->
-<div class="theme-switch" onclick="toggleMode()"><i class="fas fa-sun"></i> / <i class="fas fa-moon"></i></div>
+<div class="theme-switch" onclick="toggleMode()"><i class="fas fa-sun"></i><i class="fas fa-moon"></i></div>
 <div class="lang-switch" onclick="toggleLang()">EN / FR</div>
 
-<!-- Navigation -->
+<!-- Navigation Tabs -->
 <nav class="top-nav">
   <button onclick="go('about')">About</button>
   <button onclick="go('projects')">Projects</button>
@@ -29,7 +28,7 @@
   <button onclick="go('contact')">Contact</button>
 </nav>
 
-<!-- Hero -->
+<!-- Hero Section -->
 <header class="header">
   <h1>Adam Arzouni</h1>
   <p class="en show">Mechanical Engineer • Aerospace • Creative Technologist</p>
@@ -37,28 +36,28 @@
   <img class="profile-img" src="images/me.jpg" alt="Adam Arzouni">
 </header>
 
-<!-- About -->
+<!-- About Section -->
 <section id="about" class="section">
   <p class="en show">
-    Mechanical engineer based in Montreal. I mix aerospace engineering with creative technology — from Arduino builds to TV apps.
+    Mechanical engineer based in Montreal. I mix aerospace engineering with creative technology — from Arduino builds to smart TV apps and creative projects.
   </p>
   <p class="fr">
-    Ingénieur mécanique basé à Montréal. Je combine l’ingénierie aérospatiale avec la technologie créative — des projets Arduino aux applications TV.
+    Ingénieur mécanique basé à Montréal. Je combine l’ingénierie aérospatiale avec la technologie créative — des projets Arduino aux applications TV et créations artistiques.
   </p>
 </section>
 
-<!-- Projects -->
+<!-- Projects Section -->
 <section id="projects" class="section">
   <div class="card">
     <h3>Wedding Rotary Phone</h3>
     <img src="images/wedding1.jpg" alt="Wedding Rotary Phone">
-    <p>Converted an old rotary phone into a recording station using Arduino + Teensy, letting guests leave voice messages.</p>
+    <p>Transformed an old rotary phone into a recording station using Arduino + Teensy, allowing guests to leave voice messages for the wedding.</p>
   </div>
 
   <div class="card">
     <h3>Samsung TV App</h3>
     <img src="images/tvapp1.jpg" alt="Samsung TV App">
-    <p>Developed a Tizen-based smart TV app with clean UI for content browsing.</p>
+    <p>Created a Tizen-based smart TV application for interactive content browsing.</p>
   </div>
 
   <div class="card">
@@ -68,13 +67,13 @@
   </div>
 </section>
 
-<!-- Experience -->
+<!-- Experience Section -->
 <section id="experience" class="section">
   <b>Pratt & Whitney Canada – Account Manager</b>
-  <p>Managed aerospace projects, coordinated engineering teams, and maintained client relationships.</p>
+  <p>Managed aerospace projects, coordinated engineering teams, and maintained strong client relationships. Experience includes project management, technical consulting, and creative tech integration.</p>
 </section>
 
-<!-- Contact -->
+<!-- Contact Section -->
 <section id="contact" class="section">
   <h2>Ready to start a project together?</h2>
   <p>I'd love to work with you. Fill out the form below to tell me more:</p>
@@ -86,7 +85,7 @@
   </form>
 </section>
 
-<!-- Back to top -->
+<!-- Back to Top Button -->
 <button id="topBtn"><i class="fas fa-arrow-up"></i></button>
 
 <!-- Scripts -->
@@ -98,8 +97,8 @@ function toggleMode(){
 let english = true;
 function toggleLang(){
   english = !english;
-  document.querySelectorAll(".en").forEach(e => e.classList.toggle("show", english));
-  document.querySelectorAll(".fr").forEach(f => f.classList.toggle("show", !english));
+  document.querySelectorAll(".en").forEach(e=>e.classList.toggle("show", english));
+  document.querySelectorAll(".fr").forEach(f=>f.classList.toggle("show", !english));
 }
 
 function go(id){
@@ -110,9 +109,9 @@ window.onscroll = () => {
   document.getElementById("topBtn").style.display = window.scrollY > 400 ? "block" : "none";
 }
 
-// Force English by default
+// Force English default
 window.onload = () => {
-  document.querySelectorAll(".en").forEach(e => e.classList.add("show"));
+  document.querySelectorAll(".en").forEach(e=>e.classList.add("show"));
 }
 </script>
 
