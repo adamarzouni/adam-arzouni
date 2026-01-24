@@ -16,7 +16,8 @@
 </head>
 <body>
 
-<!-- Dark/Light Toggle -->
+<!-- ================== TOGGLES ================== -->
+<!-- Dark/Light Mode Toggle -->
 <div class="theme-switch" onclick="toggleMode()">
   <i class="fas fa-lightbulb"></i>
 </div>
@@ -24,88 +25,97 @@
 <!-- Language Toggle -->
 <div class="lang-switch" onclick="toggleLang()">EN / FR</div>
 
-<!-- Navigation Tabs -->
+<!-- ================== NAVIGATION ================== -->
 <nav class="top-nav">
-  <button onclick="go('about')">About</button>
-  <button onclick="go('projects')">Projects</button>
-  <button onclick="go('experience')">Experience</button>
-  <button onclick="go('contact')">Contact</button>
+  <button onclick="goToSection('about')">About</button>
+  <button onclick="goToSection('projects')">Projects</button>
+  <button onclick="goToSection('experience')">Experience</button>
+  <button onclick="goToSection('contact')">Contact</button>
 </nav>
 
-<!-- Hero Section -->
-<header class="header section">
-  <h1 class="fade-in">Adam Arzouni</h1>
-  <p class="en show fade-in">Mechanical Engineer • Aerospace • Creative Technologist</p>
-  <p class="fr fade-in">Ingénieur Mécanique • Aérospatial • Créatif Technologique</p>
-  <img class="profile-img fade-in" src="images/me.jpg" alt="Adam Arzouni">
-</header>
+<!-- ================== MAIN CONTENT ================== -->
+<main>
 
-<!-- About Section -->
-<section id="about" class="section fade-in">
-  <h2 class="section-header en show">About Me</h2>
-  <h2 class="section-header fr">À propos</h2>
-  <p class="en show">
-    Mechanical engineer based in Montreal. I combine aerospace engineering with creative technology — from Arduino builds to smart TV apps and photography projects.
-  </p>
-  <p class="fr">
-    Ingénieur mécanique basé à Montréal. Je combine l’ingénierie aérospatiale avec la technologie créative — des projets Arduino aux applications TV et à la photographie.
-  </p>
-</section>
+  <!-- ===== HERO / HEADER ===== -->
+  <header class="header section fade-in">
+    <h1 class="fade-in">Adam Arzouni</h1>
+    <p class="en show fade-in">Mechanical Engineer • Aerospace • Creative Technologist</p>
+    <p class="fr fade-in">Ingénieur Mécanique • Aérospatial • Créatif Technologique</p>
+    <img class="profile-img fade-in" src="images/me.jpg" alt="Adam Arzouni">
+  </header>
 
-<!-- Projects Section -->
-<section id="projects" class="section fade-in">
-  <h2 class="section-header en show">Projects</h2>
-  <h2 class="section-header fr">Projets</h2>
+  <!-- ===== ABOUT SECTION ===== -->
+  <section id="about" class="section fade-in">
+    <h2 class="section-header en show">About Me</h2>
+    <h2 class="section-header fr">À propos</h2>
+    <p class="en show">
+      Mechanical engineer based in Montreal. I combine aerospace engineering with creative technology — from Arduino builds to smart TV apps and photography projects.
+    </p>
+    <p class="fr">
+      Ingénieur mécanique basé à Montréal. Je combine l’ingénierie aérospatiale avec la technologie créative — des projets Arduino aux applications TV et à la photographie.
+    </p>
+  </section>
 
-  <div class="projects-grid">
-    <div class="project-card" onclick="openProject('wedding')">
-      <img src="images/project1-icon.png" alt="Wedding Project Icon">
-      <p>Wedding Rotary Phone</p>
+  <!-- ===== PROJECTS SECTION ===== -->
+  <section id="projects" class="section fade-in">
+    <h2 class="section-header en show">Projects</h2>
+    <h2 class="section-header fr">Projets</h2>
+
+    <div class="projects-grid">
+      <!-- Project Card Template -->
+      <div class="project-card" data-project="wedding" onclick="openProject('wedding')">
+        <img src="images/project1-icon.png" alt="Wedding Project Icon">
+        <p>Wedding Rotary Phone</p>
+      </div>
+
+      <div class="project-card" data-project="tvapp" onclick="openProject('tvapp')">
+        <img src="images/project2-icon.png" alt="TV App Icon">
+        <p>Samsung TV App</p>
+      </div>
+
+      <div class="project-card" data-project="photography" onclick="openProject('photography')">
+        <img src="images/project3-icon.png" alt="Photography Icon">
+        <p>Photography</p>
+      </div>
     </div>
+  </section>
 
-    <div class="project-card" onclick="openProject('tvapp')">
-      <img src="images/project2-icon.png" alt="TV App Icon">
-      <p>Samsung TV App</p>
+  <!-- ===== EXPERIENCE SECTION ===== -->
+  <section id="experience" class="section fade-in">
+    <h2 class="section-header en show">Experience</h2>
+    <h2 class="section-header fr">Expérience</h2>
+
+    <div class="experience-item">
+      <h3>Pratt & Whitney Canada – Account Manager</h3>
+      <p>Managed aerospace projects, coordinated engineering teams, and maintained strong client relationships. Experience includes project management, technical consulting, and creative tech integration.</p>
     </div>
+  </section>
 
-    <div class="project-card" onclick="openProject('photography')">
-      <img src="images/project3-icon.png" alt="Photography Icon">
-      <p>Photography</p>
-    </div>
-  </div>
-</section>
+  <!-- ===== CONTACT SECTION ===== -->
+  <section id="contact" class="section fade-in">
+    <h2 class="section-header en show">Contact</h2>
+    <h2 class="section-header fr">Contact</h2>
 
-<!-- Experience Section -->
-<section id="experience" class="section fade-in">
-  <h2 class="section-header en show">Experience</h2>
-  <h2 class="section-header fr">Expérience</h2>
-  <b>Pratt & Whitney Canada – Account Manager</b>
-  <p>Managed aerospace projects, coordinated engineering teams, and maintained strong client relationships. Experience includes project management, technical consulting, and creative tech integration.</p>
-</section>
+    <h3>Ready to start a project together?</h3>
+    <p>I'd love to work with you. Fill out the form below to tell me more:</p>
 
-<!-- Contact Section -->
-<section id="contact" class="section fade-in">
-  <h2 class="section-header en show">Contact</h2>
-  <h2 class="section-header fr">Contact</h2>
+    <form action="https://formspree.io/f/xzdejweq" method="POST" class="contact-form">
+      <label for="name">Name</label>
+      <input name="name" placeholder="Your Name" required>
 
-  <h3>Ready to start a project together?</h3>
-  <p>I'd love to work with you. Fill out the form below to tell me more:</p>
+      <label for="email">Email</label>
+      <input name="email" placeholder="Your Email" type="email" required>
 
-  <form action="https://formspree.io/f/xzdejweq" method="POST" class="contact-form">
-    <label for="name">Name</label>
-    <input name="name" placeholder="Your Name" required>
-    
-    <label for="email">Email</label>
-    <input name="email" placeholder="Your Email" type="email" required>
-    
-    <label for="message">Message</label>
-    <textarea name="message" placeholder="Your Message" required></textarea>
-    
-    <button type="submit"><i class="fas fa-paper-plane"></i> Send</button>
-  </form>
-</section>
+      <label for="message">Message</label>
+      <textarea name="message" placeholder="Your Message" required></textarea>
 
-<!-- Project Full-Page Modal -->
+      <button type="submit"><i class="fas fa-paper-plane"></i> Send</button>
+    </form>
+  </section>
+
+</main>
+
+<!-- ================== FULL-PAGE PROJECT MODAL ================== -->
 <div id="projectModal" class="modal-full">
   <div class="modal-full-content">
     <span class="close" onclick="closeProject()">&times;</span>
@@ -119,9 +129,10 @@
   </div>
 </div>
 
-<!-- Back to Top -->
+<!-- ================== BACK TO TOP BUTTON ================== -->
 <button id="topBtn"><i class="fas fa-arrow-up"></i></button>
 
+<!-- ================== SCRIPT ================== -->
 <script src="script.js"></script>
 </body>
 </html>
