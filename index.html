@@ -58,37 +58,19 @@
     <h2 class="section-header fr">Projets</h2>
 
     <div class="projects-grid">
-      <div class="project-card" onclick="toggleProjectDetails('wedding')">
+      <div class="project-card" onclick="openProject('wedding')">
         <i class="fas fa-phone-alt fa-3x"></i>
         <p>Wedding Rotary Phone</p>
-        <div class="project-details" id="details-wedding">
-          <p class="en show">Transformed an old rotary phone into a recording station using Arduino + Teensy. Guests could leave messages.</p>
-          <p class="fr">J'ai transformé un vieux téléphone rotatif en station d'enregistrement avec Arduino + Teensy. Les invités pouvaient laisser des messages.</p>
-          <img src="images/wedding1.jpg" alt="Wedding Phone 1">
-          <img src="images/wedding2.jpg" alt="Wedding Phone 2">
-        </div>
       </div>
 
-      <div class="project-card" onclick="toggleProjectDetails('tvapp')">
+      <div class="project-card" onclick="openProject('tvapp')">
         <i class="fas fa-tv fa-3x"></i>
         <p>Samsung TV App</p>
-        <div class="project-details" id="details-tvapp">
-          <p class="en show">Developed a Tizen-based smart TV app with interactive content browsing.</p>
-          <p class="fr">Développement d'une application TV Tizen avec navigation de contenu interactive.</p>
-          <img src="images/tvapp1.jpg" alt="TV App 1">
-          <img src="images/tvapp2.jpg" alt="TV App 2">
-        </div>
       </div>
 
-      <div class="project-card" onclick="toggleProjectDetails('photography')">
+      <div class="project-card" onclick="openProject('photography')">
         <i class="fas fa-camera-retro fa-3x"></i>
         <p>Photography</p>
-        <div class="project-details" id="details-photography">
-          <p class="en show">Creative photography projects showcasing landscapes, portraits, and experimental work.</p>
-          <p class="fr">Projets photographiques créatifs mettant en valeur paysages, portraits et expérimentation.</p>
-          <img src="images/photo1.jpg" alt="Photo 1">
-          <img src="images/photo2.jpg" alt="Photo 2">
-        </div>
       </div>
     </div>
   </section>
@@ -97,7 +79,6 @@
   <section id="experience" class="section fade-in">
     <h2 class="section-header en show">Experience</h2>
     <h2 class="section-header fr">Expérience</h2>
-
     <div class="experience-item">
       <h3>Pratt & Whitney Canada – Account Manager</h3>
       <p>Managed aerospace projects, coordinated engineering teams, and maintained strong client relationships. Experience includes project management, technical consulting, and creative tech integration.</p>
@@ -124,6 +105,22 @@
   </section>
 
 </main>
+
+<!-- ================== PROJECT MODAL ================== -->
+<div id="projectModal" class="modal-full">
+  <div class="modal-full-content">
+    <span class="close" onclick="closeProject()">&times;</span>
+    <h2 id="modal-title" class="en show"></h2>
+    <h2 id="modal-title-fr" class="fr"></h2>
+    <p id="modal-desc" class="en show"></p>
+    <p id="modal-desc-fr" class="fr"></p>
+    <div class="gallery">
+      <button class="prev" onclick="changeImage(-1)"><i class="fas fa-chevron-left"></i></button>
+      <img id="modal-main-img" src="" alt="Project Image">
+      <button class="next" onclick="changeImage(1)"><i class="fas fa-chevron-right"></i></button>
+    </div>
+  </div>
+</div>
 
 <!-- ================== BACK TO TOP ================== -->
 <button id="topBtn"><i class="fas fa-arrow-up"></i></button>
