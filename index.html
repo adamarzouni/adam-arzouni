@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adam Arzouni | Creative Developer</title>
+    <title>Adam Arzouni | Creative Developer & Product Manager</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
@@ -12,17 +12,12 @@
 
     <nav id="navbar">
         <div class="logo">ADAM<span class="mustard-text">ARZOUNI</span></div>
-        
         <div class="nav-links">
-            <a href="#home" class="en">Home</a>
-            <a href="#about" class="en">About</a>
-            <a href="#work" class="en">Work</a>
-            
-            <a href="#home" class="fr">Accueil</a>
-            <a href="#about" class="fr">À Propos</a>
-            <a href="#work" class="fr">Projets</a>
+            <a href="#home" class="en">Home</a><a href="#home" class="fr">Accueil</a>
+            <a href="#about" class="en">About</a><a href="#about" class="fr">À Propos</a>
+            <a href="#experience" class="en">Experience</a><a href="#experience" class="fr">Parcours</a>
+            <a href="#work" class="en">Work</a><a href="#work" class="fr">Projets</a>
         </div>
-
         <div class="nav-controls">
             <button id="lang-toggle" class="nav-btn">FR</button>
             <button id="theme-toggle" class="nav-btn"><i class="fas fa-moon"></i></button>
@@ -38,10 +33,16 @@
                     <span class="en">Building Digital <br><span class="mustard-gradient">Experiences.</span></span>
                     <span class="fr">Créateur d'Espaces <br><span class="mustard-gradient">Digitaux.</span></span>
                 </h1>
-                <p class="reveal en">High-end development for Adam Arzouni's creative vision.</p>
-                <p class="reveal fr">Développement haut de gamme pour la vision créative d'Adam Arzouni.</p>
-                <a href="#about" class="explore-btn reveal en">Explore <i class="fas fa-arrow-down"></i></a>
-                <a href="#about" class="explore-btn reveal fr">Explorer <i class="fas fa-arrow-down"></i></a>
+                <p class="reveal en">Creative Product Manager & Developer based in France.</p>
+                <p class="reveal fr">Product Manager & Développeur Créatif basé en France.</p>
+                
+                <div class="explore-container reveal">
+                    <a href="#about" class="explore-btn">
+                        <span class="en">Explore My World</span>
+                        <span class="fr">Explorer Mon Univers</span>
+                        <div class="arrow-circle"><i class="fas fa-arrow-down"></i></div>
+                    </a>
+                </div>
             </div>
         </section>
 
@@ -53,11 +54,46 @@
                     <img src="images/me.jpg" alt="Adam Arzouni" class="profile-img">
                 </div>
                 <div class="about-text">
-                    <h2 class="mustard-text">About Me</h2>
-                    <h3 class="en">Adam Arzouni — Designer & Developer</h3>
-                    <h3 class="fr">Adam Arzouni — Designer & Développeur</h3>
-                    <p class="en">I specialize in high-impact digital products. My work is defined by precision and the "mustard" touch.</p>
-                    <p class="fr">Je me spécialise dans les produits numériques à fort impact. Mon travail est défini par la précision.</p>
+                    <h2 class="mustard-text">01. About Me</h2>
+                    <h3 class="en">Innovation driven by precision.</h3>
+                    <h3 class="fr">L'innovation guidée par la précision.</h3>
+                    <p class="en">I am Adam Arzouni, a professional blending technical development with strategic product management. My goal is to create products that are not just functional, but emotionally resonant.</p>
+                    <p class="fr">Je suis Adam Arzouni, un professionnel alliant développement technique et gestion de produit stratégique.</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="horizontal-line"></div>
+
+        <section id="experience" class="section reveal">
+            <h2 class="section-header mustard-text">02. Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="time-dot"></div>
+                    <div class="time-content">
+                        <span class="date">2024 — Present</span>
+                        <h4>Product Manager @ Visiativ</h4>
+                        <p class="en">Leading product strategy and digital transformation initiatives.</p>
+                        <p class="fr">Pilotage de la stratégie produit et des initiatives de transformation digitale.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="time-dot"></div>
+                    <div class="time-content">
+                        <span class="date">2023 — 2024</span>
+                        <h4>Project Manager Officer @ Safran</h4>
+                        <p class="en">Managing high-stakes aerospace projects and process optimization.</p>
+                        <p class="fr">Gestion de projets aéronautiques et optimisation des processus.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="time-dot"></div>
+                    <div class="time-content">
+                        <span class="date">2022 — 2023</span>
+                        <h4>Junior Product Manager @ Cegid</h4>
+                        <p class="en">Focused on SaaS solutions and user experience enhancements.</p>
+                        <p class="fr">Focus sur les solutions SaaS et l'amélioration de l'expérience utilisateur.</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -65,26 +101,34 @@
         <div class="horizontal-line"></div>
 
         <section id="work" class="section reveal">
-            <h2 class="section-header en">Selected Work</h2>
-            <h2 class="section-header fr">Projets</h2>
+            <h2 class="section-header mustard-text">03. Selected Work</h2>
             <div class="bento-grid">
-                <div class="bento-item large"><div class="card-content"><h3>Lux Dashboard</h3></div></div>
-                <div class="bento-item"><div class="card-content"><h3>Identity</h3></div></div>
-                <div class="bento-item"><div class="card-content"><h3>Commerce</h3></div></div>
-                <div class="bento-item wide"><div class="card-content"><h3>Mobile App</h3></div></div>
+                <div class="bento-item large"><h3>Luxury SaaS</h3></div>
+                <div class="bento-item"><h3>Brand Identity</h3></div>
+                <div class="bento-item"><h3>E-Commerce</h3></div>
+                <div class="bento-item wide"><h3>Mobile Ecosystem</h3></div>
             </div>
         </section>
 
         <div class="horizontal-line"></div>
 
         <section id="contact" class="section reveal">
-            <div class="contact-box">
-                <h2 class="mustard-text">Contact</h2>
+            <div class="contact-wrapper">
+                <div class="contact-header">
+                    <h2 class="mustard-text">04. Get In Touch</h2>
+                    <p class="en">Have a project in mind? Let's build it together.</p>
+                    <p class="fr">Un projet en tête ? Construisons-le ensemble.</p>
+                </div>
                 <form action="https://formspree.io/f/xzdejweq" method="POST" class="contact-form">
-                    <input name="name" placeholder="Name" required>
-                    <input name="email" placeholder="Email" type="email" required>
-                    <textarea name="message" placeholder="Message" required></textarea>
-                    <button type="submit" class="mustard-bg">Send Message</button>
+                    <div class="input-group">
+                        <input name="name" placeholder="Name" required>
+                        <input name="email" placeholder="Email" type="email" required>
+                    </div>
+                    <textarea name="message" placeholder="Your Message" required></textarea>
+                    <button type="submit" class="mustard-bg">
+                        <span class="en">Send Message</span>
+                        <span class="fr">Envoyer</span>
+                    </button>
                 </form>
             </div>
         </section>
