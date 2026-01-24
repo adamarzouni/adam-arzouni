@@ -5,240 +5,85 @@
 <title>Adam Arzouni</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-
-<style>
-/* ------------------- CORE COLORS ------------------- */
-:root {
-  --bg-dark:#121212;
-  --bg-light:#ffffff;
-  --text-dark:#ffffff;
-  --text-light:#000000;
-  --accent-dark:#00ffff;
-  --accent-light:#000;
-}
-
-body {
-  margin:0;
-  font-family:Inter, sans-serif;
-  background:var(--bg-dark);
-  color:var(--text-dark);
-  transition:.4s;
-}
-
-body.light{
-  background:var(--bg-light);
-  color:var(--text-light);
-}
-
-/* ------------------- HERO ------------------- */
-.header{
-  padding:120px 20px 100px;
-  text-align:center;
-  background:
-    radial-gradient(circle at top, rgba(0,255,255,.12), transparent 60%),
-    linear-gradient(180deg,#0b0f14,#121212);
-}
-
-body.light .header{
-  background:
-    radial-gradient(circle at top, rgba(0,0,0,.08), transparent 60%),
-    linear-gradient(180deg,#f5f5f5,#fff);
-}
-
-h1{
-  font-size:3.2em;
-  color:var(--accent-dark);
-  margin-bottom:10px;
-}
-
-body.light h1{color:#000}
-
-.profile-img{
-  width:150px;
-  height:150px;
-  border-radius:50%;
-  border:3px solid var(--accent-dark);
-}
-
-/* ------------------- NAV ------------------- */
-.top-nav{
-  position:sticky;
-  top:0;
-  z-index:200;
-  display:flex;
-  justify-content:center;
-  gap:25px;
-  padding:18px;
-  backdrop-filter:blur(10px);
-  background:rgba(18,18,18,.7);
-  border-bottom:1px solid rgba(255,255,255,.1);
-}
-
-body.light .top-nav{
-  background:rgba(255,255,255,.8);
-  border-bottom:1px solid rgba(0,0,0,.1);
-}
-
-.top-nav button{
-  background:none;
-  border:none;
-  font-weight:600;
-  cursor:pointer;
-  color:inherit;
-}
-
-/* ------------------- LANG ------------------- */
-.en{display:none}
-.fr{display:none}
-.showlang{display:block}
-
-/* ------------------- SECTIONS ------------------- */
-.section{
-  max-width:900px;
-  margin:80px auto;
-  padding:0 20px;
-}
-
-.flow-item{
-  border-left:3px solid var(--accent-dark);
-  padding-left:20px;
-  margin-bottom:40px;
-}
-
-/* ------------------- CARDS ------------------- */
-.card{
-  background:#1e1e1e;
-  padding:25px;
-  border-radius:14px;
-  margin-bottom:40px;
-  transition:.3s;
-}
-
-body.light .card{
-  background:#f5f5f5;
-}
-
-.card:hover{transform:translateY(-6px)}
-
-/* ------------------- CONTACT ------------------- */
-input, textarea{
-  width:100%;
-  padding:14px;
-  border-radius:10px;
-  border:none;
-  margin-bottom:15px;
-}
-
-button{
-  padding:14px 20px;
-  border:none;
-  border-radius:10px;
-  cursor:pointer;
-  background:var(--accent-dark);
-}
-
-/* ------------------- BACK TO TOP ------------------- */
-#topBtn{
-  position:fixed;
-  bottom:30px;
-  right:30px;
-  display:none;
-  background:var(--accent-dark);
-  border:none;
-  padding:12px 15px;
-  border-radius:50%;
-}
-</style>
 </head>
 
 <body>
 
 <!-- Toggles -->
-<button onclick="toggleMode()" style="position:fixed;left:15px;top:15px">🌓</button>
-<button onclick="toggleLang()" style="position:fixed;left:60px;top:15px">→</button>
+<div class="theme-switch" onclick="toggleMode()">🌞 / 🌙</div>
+<div class="lang-switch" onclick="toggleLang()">EN / FR</div>
 
-<!-- NAV -->
-<div class="top-nav">
+<!-- Navigation -->
+<nav class="top-nav">
   <button onclick="go('about')">About</button>
   <button onclick="go('projects')">Projects</button>
   <button onclick="go('experience')">Experience</button>
   <button onclick="go('contact')">Contact</button>
-</div>
+</nav>
 
-<!-- HERO -->
-<div class="header">
+<!-- Hero -->
+<header class="header">
   <h1>Adam Arzouni</h1>
-  <p class="en showlang">Mechanical Engineer • Aerospace • Creative Technologist</p>
+  <p class="en show">Mechanical Engineer • Aerospace • Creative Technologist</p>
   <p class="fr">Ingénieur Mécanique • Aérospatial • Créatif Technologique</p>
-  <img class="profile-img" src="https://media.licdn.com/dms/image/v2/D4E03AQFoR3DnYqlYIA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1695586330333">
-</div>
+  <img class="profile-img" src="images/me.jpg">
+</header>
 
-<!-- ABOUT -->
-<div class="section" id="about">
-<h2>About</h2>
-<p class="en showlang">
-Mechanical engineer based in Montreal. I mix aerospace engineering with creative technology — from Arduino builds to TV apps.
-</p>
-<p class="fr">
-Ingénieur mécanique à Montréal. Je combine l’aérospatiale et la technologie créative.
-</p>
-</div>
+<!-- About -->
+<section id="about" class="section">
+  <p class="en show">Mechanical engineer in Montreal mixing aerospace with creative technology.</p>
+  <p class="fr">Ingénieur mécanique à Montréal, combinant aérospatial et technologie créative.</p>
+</section>
 
-<!-- PROJECTS -->
-<div class="section" id="projects">
-<h2>Projects</h2>
+<!-- Projects -->
+<section id="projects" class="section">
+  <div class="card">
+    <h3>Wedding Rotary Phone</h3>
+    <img src="images/wedding1.jpg">
+    <p>Arduino + Teensy recording phone for wedding guests.</p>
+  </div>
 
-<div class="card">
-<h3>Wedding Rotary Phone</h3>
-<p>Converted an old rotary phone into an Arduino + Teensy recording station so wedding guests could leave voice messages.</p>
-<img src="https://via.placeholder.com/800x400">
-</div>
+  <div class="card">
+    <h3>Samsung TV App</h3>
+    <img src="images/tvapp1.jpg">
+    <p>Tizen smart TV app.</p>
+  </div>
+</section>
 
-<div class="card">
-<h3>Samsung TV App</h3>
-<p>Built a Tizen-based smart TV app to browse content with a clean UI.</p>
-<img src="https://via.placeholder.com/800x400">
-</div>
+<!-- Experience -->
+<section id="experience" class="section">
+  <b>Pratt & Whitney Canada – Account Manager</b>
+  <p>Managed aerospace projects and client relationships.</p>
+</section>
 
-<div class="card">
-<h3>Photography</h3>
-<img src="https://via.placeholder.com/800x400">
-<img src="https://via.placeholder.com/800x400">
-</div>
-
-</div>
-
-<!-- EXPERIENCE -->
-<div class="section" id="experience">
-<h2>Experience</h2>
-<div class="flow-item">
-<b>Pratt & Whitney Canada – Account Manager</b><br>
-Managed aerospace engine projects, coordinated engineering teams and clients.
-</div>
-</div>
-
-<!-- CONTACT -->
-<div class="section" id="contact">
-<h2>Contact</h2>
+<!-- Contact -->
+<section id="contact" class="section">
 <form action="https://formspree.io/f/xzdejweq" method="POST">
-<input name="name" placeholder="Name">
-<input name="email" placeholder="Email">
-<textarea name="message" placeholder="Message"></textarea>
-<button>Send</button>
+  <input name="name" placeholder="Name">
+  <input name="email" placeholder="Email">
+  <textarea name="message" placeholder="Message"></textarea>
+  <button>Send</button>
 </form>
-</div>
+</section>
 
 <button id="topBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
 
 <script>
-function toggleMode(){document.body.classList.toggle("light")}
-function toggleLang(){
-  document.querySelectorAll('.en').forEach(e=>e.classList.toggle("showlang"));
-  document.querySelectorAll('.fr').forEach(e=>e.classList.toggle("showlang"));
+function toggleMode(){
+  document.body.classList.toggle("light");
 }
+
+let english=true;
+function toggleLang(){
+  english=!english;
+  document.querySelectorAll(".en").forEach(e=>e.classList.toggle("show",english));
+  document.querySelectorAll(".fr").forEach(f=>f.classList.toggle("show",!english));
+}
+
 function go(id){document.getElementById(id).scrollIntoView({behavior:"smooth"})}
+
 window.onscroll=()=>{topBtn.style.display=window.scrollY>400?"block":"none"}
 </script>
 
