@@ -35,10 +35,17 @@ h1{color:var(--accent);}
 body.light h1{color:#000;}
 
 .profile-img{
-  width:150px;
-  height:150px;
+  width:160px;
+  height:160px;
   border-radius:50%;
-  border:3px solid var(--accent);
+  border:4px solid var(--accent);
+  box-shadow:0 8px 25px rgba(0,255,255,0.4);
+  transition:0.5s;
+}
+
+.profile-img:hover{
+  transform:rotate(5deg) scale(1.05);
+  box-shadow:0 12px 35px rgba(0,255,255,0.7);
 }
 
 .top-nav{
@@ -47,19 +54,41 @@ body.light h1{color:#000;}
   display:flex;
   justify-content:center;
   gap:20px;
-  padding:15px;
-  background:rgba(18,18,18,.9);
+  padding:12px 0;
+  background:rgba(18,18,18,.95);
   z-index:200;
+  box-shadow:0 2px 10px rgba(0,0,0,0.2);
+  border-bottom:2px solid var(--accent);
+  transition:0.3s;
 }
 
-body.light .top-nav{background:rgba(255,255,255,.9);}
+body.light .top-nav{
+  background:rgba(255,255,255,.95);
+}
 
 .top-nav button{
   background:none;
   border:none;
+  padding:8px 18px;
+  border-radius:20px;
   font-weight:600;
   cursor:pointer;
-  color:inherit;
+  color:#fff;
+  transition:0.3s;
+}
+
+.top-nav button:hover{
+  background:var(--accent);
+  color:#000;
+  transform:translateY(-2px);
+}
+
+body.light .top-nav button{
+  color:#000;
+}
+body.light .top-nav button:hover{
+  background:#000;
+  color:#fff;
 }
 
 .section{
@@ -75,22 +104,52 @@ body.light .top-nav{background:rgba(255,255,255,.9);}
   margin-bottom:40px;
   transition:0.3s;
 }
-
 body.light .card{background:#f5f5f5;}
-
 .card:hover{transform:translateY(-6px);}
 
 .theme-switch, .lang-switch{
   position:fixed;
   top:15px;
-  padding:6px 10px;
   cursor:pointer;
   font-weight:600;
   z-index:500;
+  transition:0.3s;
 }
 
-.theme-switch{left:15px;}
-.lang-switch{left:80px;}
+.theme-switch{
+  left:15px;
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  background:var(--accent);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:18px;
+  color:#000;
+  box-shadow:0 4px 15px rgba(0,0,0,0.3);
+}
+
+.theme-switch:hover{
+  transform:scale(1.1);
+}
+
+body.light .theme-switch{
+  background:#000;
+  color:#fff;
+}
+
+.lang-switch{
+  left:80px;
+  background:rgba(255,255,255,0.8);
+  padding:10px 14px;
+  border-radius:20px;
+}
+
+.lang-switch:hover{
+  background:var(--accent);
+  color:#000;
+}
 
 .en, .fr{display:none;}
 .show{display:block;}
@@ -106,5 +165,6 @@ body.light .card{background:#f5f5f5;}
   color:#000;
   cursor:pointer;
   display:none;
+  box-shadow:0 4px 15px rgba(0,0,0,0.3);
 }
 #topBtn i{font-size:16px;}
