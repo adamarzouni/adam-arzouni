@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adam Arzouni | Mechanical Engineer</title>
+    <title>Adam Arzouni | Mechanical & Aerospace Engineer</title>
     
     <link rel="icon" type="image/png" href="images/logo-dark.png">
     
@@ -17,20 +17,35 @@
         <div class="logo-container">
             <img src="images/logo-dark.png" alt="ARZ Logo" id="nav-logo">
         </div>
-        <div class="nav-links">
+
+        <div class="nav-links desktop-only">
             <a href="#home"><span class="en">Home</span><span class="fr">Accueil</span></a>
             <a href="#about"><span class="en">About</span><span class="fr">À Propos</span></a>
             <a href="#experience"><span class="en">Experience</span><span class="fr">Parcours</span></a>
             <a href="#work"><span class="en">Projects</span><span class="fr">Projets</span></a>
         </div>
+
         <div class="nav-controls">
             <button id="lang-toggle" class="nav-btn">FR</button>
             <button id="theme-toggle" class="nav-btn"><i class="fas fa-moon"></i></button>
-            <a href="#contact" class="contact-nav-btn mustard-bg">
+            <a href="#contact" class="contact-nav-btn mustard-bg desktop-only">
                 <span class="en">Contact</span><span class="fr">Contact</span>
             </a>
+            <button id="hamburger-btn" class="nav-btn mobile-only">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
     </nav>
+
+    <div id="mobile-menu" class="mobile-menu">
+        <div class="mobile-links">
+            <a href="#home" onclick="closeMenu()"><span class="en">Home</span><span class="fr">Accueil</span></a>
+            <a href="#about" onclick="closeMenu()"><span class="en">About</span><span class="fr">À Propos</span></a>
+            <a href="#experience" onclick="closeMenu()"><span class="en">Experience</span><span class="fr">Parcours</span></a>
+            <a href="#work" onclick="closeMenu()"><span class="en">Projects</span><span class="fr">Projets</span></a>
+            <a href="#contact" onclick="closeMenu()" class="mustard-text"><span class="en">Contact Me</span><span class="fr">Me Contacter</span></a>
+        </div>
+    </div>
 
     <main>
         <section id="home" class="hero">
