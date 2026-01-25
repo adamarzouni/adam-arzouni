@@ -1,78 +1,70 @@
-// --- THEME TOGGLE & LOGO SWITCH ---
+// Theme & Logo Logic
 const themeBtn = document.getElementById('theme-toggle');
 const logoImg = document.getElementById('nav-logo');
-
 themeBtn.addEventListener('click', () => {
     document.body.classList.toggle('light');
-    const icon = themeBtn.querySelector('i');
-    
-    // Switch Icon and Logo based on Theme
-    if (document.body.classList.contains('light')) {
-        icon.classList.remove('fa-moon');
-        icon.classList.add('fa-sun');
-        logoImg.src = "images/logo-light.png"; // Use the white background logo
-    } else {
-        icon.classList.remove('fa-sun');
-        icon.classList.add('fa-moon');
-        logoImg.src = "images/logo-dark.png"; // Use the black background logo
-    }
+    const isLight = document.body.classList.contains('light');
+    themeBtn.querySelector('i').className = isLight ? 'fas fa-sun' : 'fas fa-moon';
+    logoImg.src = isLight ? "images/logo-light.png" : "images/logo-dark.png";
 });
 
-// --- LANGUAGE TOGGLE ---
+// Language Toggle
 const langBtn = document.getElementById('lang-toggle');
 langBtn.addEventListener('click', () => {
     const isEn = document.body.classList.contains('lang-en');
-    if (isEn) {
-        document.body.classList.replace('lang-en', 'lang-fr');
-        langBtn.innerText = "EN";
-    } else {
-        document.body.classList.replace('lang-fr', 'lang-en');
-        langBtn.innerText = "FR";
-    }
+    document.body.classList.toggle('lang-en', !isEn);
+    document.body.classList.toggle('lang-fr', isEn);
+    langBtn.innerText = isEn ? "EN" : "FR";
 });
 
-// --- MODAL LOGIC ---
-const modal = document.getElementById('projectModal');
-const mTitle = document.getElementById('m-title');
-const mDesc = document.getElementById('m-desc');
-const mLink = document.getElementById('m-link');
-const mImage = document.getElementById('m-image');
+// Enhanced Modal
+function openModal(title, desc, link, gallery, doc) {
+    document.getElementById('m-title').innerText = title;
+    document.getElementById('m-desc').innerText = desc;
+    document.getElementById('m-link').href = link;
+    document.getElementById('m-image').src = gallery[0];
+    
+    const galleryDiv = document.getElementById('m-gallery');
+    galleryDiv.innerHTML = '';
+    gallery.forEach(src => {
+        const img = document.createElement('img');
+        img.src = src;
+        img.onclick = () => document.getElementById('m-image').src = src;
+        galleryDiv.appendChild(img);
+    });
 
-function openModal(title, desc, link, imgSrc) {
-    mTitle.innerText = title;
-    mDesc.innerText = desc;
-    mLink.href = link;
-    // Uses provided image or a fallback
-    mImage.src = imgSrc || "https://via.placeholder.com/600x400?text=Project+Image";
-    modal.style.display = "block";
-    document.body.style.overflow = "hidden"; 
+    const docLink = document.getElementById('m-doc-link');
+    docLink.href = doc || '#';
+    docLink.style.display = doc ? 'flex' : 'none';
+
+    document.getElementById('projectModal').style.display = "block";
+    document.body.style.overflow = "hidden";
 }
 
 function closeModal() {
-    modal.style.display = "none";
-    document.body.style.overflow = "auto"; 
+    document.getElementById('projectModal').style.display = "none";
+    document.body.style.overflow = "auto";
 }
 
-window.onclick = (event) => {
-    if (event.target == modal) {
-        closeModal();
+// Form Handling
+const contactForm = document.getElementById('contact-form');
+const status = document.getElementById('form-status');
+contactForm.onsubmit = async (e) => {
+    e.preventDefault();
+    const data = new FormData(e.target);
+    const response = await fetch(e.target.action, { method: 'POST', body: data, headers: {'Accept': 'application/json'}});
+    if (response.ok) {
+        status.innerHTML = "Success! Your message was sent.";
+        status.className = "form-status success";
+        contactForm.reset();
+    } else {
+        status.innerHTML = "Oops! There was a problem.";
+        status.className = "form-status error";
     }
-}
-
-// --- SCROLL REVEAL ---
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('active');
-        }
-    });
-}, { threshold: 0.1 });
-
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-// --- BACK TO TOP ---
-const topBtn = document.getElementById('topBtn');
-window.onscroll = () => {
-    topBtn.style.display = window.scrollY > 500 ? "block" : "none";
 };
-topBtn.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+
+// Scroll Reveal
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
