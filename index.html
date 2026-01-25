@@ -11,7 +11,10 @@
 <body class="dark-mode lang-en">
 
     <nav id="navbar">
-        <div class="logo">ADAM<span class="mustard-text">ARZOUNI</span></div>
+        <div class="logo-container">
+            <img src="images/logo-dark.png" alt="ARZ Logo" id="nav-logo">
+        </div>
+
         <div class="nav-links">
             <a href="#home"><span class="en">Home</span><span class="fr">Accueil</span></a>
             <a href="#about"><span class="en">About</span><span class="fr">À Propos</span></a>
@@ -198,18 +201,18 @@
             <div class="bento-grid">
                 
                 <div class="bento-item large" 
-                     onclick="openModal('Energy Connector (RIAUPEL)', 'Designed an autonomous mechanical connection system for robot recharging with self-alignment capabilities. Simulated concept demonstration and assessed operating limits for Hydro-Quebec/IREQ.', 'https://github.com/adamarzouni', 'images/riaupel.jpg')">
+                     onclick="openModal('RIAUPEL Energy Connector', 'Design of an autonomous mechanical connection system for robot recharging (self-alignment of connectors). Simulated a demonstration of the concept and assessed its operating limits for Hydro-Quebec/IREQ (Jan 2021 - May 2022).', 'https://github.com/adamarzouni', 'images/riaupel.jpg')">
                     <div class="card-content">
                         <h3 class="en">Robot Energy Connector</h3>
                         <h3 class="fr">Connecteur Énergie Robot</h3>
-                        <p class="en">Autonomous Mechanical System</p>
-                        <p class="fr">Système Mécanique Autonome</p>
+                        <p class="en">Hydro-Quebec/IREQ</p>
+                        <p class="fr">Hydro-Quebec/IREQ</p>
                         <span class="click-hint"><i class="fas fa-plus"></i> <span class="en">Details</span><span class="fr">Détails</span></span>
                     </div>
                 </div>
 
                 <div class="bento-item" 
-                     onclick="openModal('Electric Drone Design', '1st Prize - Ecole Polytechnique. Construction of a flying device for rescue operations. Designed and built a powerful electric motor, created mechanical drawings and plans.', 'https://github.com/adamarzouni', 'images/drone.jpg')">
+                     onclick="openModal('Electric Drone Design', 'Winner of 1st Prize at Ecole Polytechnique. Construction of a flying device capable of rescuing an injured person. Included the design and build of a powerful electric motor, along with detailed mechanical plans and drawings.', 'https://github.com/adamarzouni', 'images/drone.jpg')">
                     <div class="card-content">
                         <h3 class="en">Electric Drone</h3>
                         <h3 class="fr">Drone Électrique</h3>
@@ -218,7 +221,7 @@
                 </div>
 
                 <div class="bento-item" 
-                     onclick="openModal('Aerospace Thermodynamics', 'Analysis of thermal efficiency in propulsion systems using CFD simulations.', 'https://github.com/adamarzouni', 'images/project3.jpg')">
+                     onclick="openModal('Aerospace Thermodynamics', 'Advanced analysis of thermal efficiency in propulsion systems using CFD simulations and thermodynamic modeling.', 'https://github.com/adamarzouni', 'images/project3.jpg')">
                     <div class="card-content">
                         <h3 class="en">Thermodynamics</h3>
                         <h3 class="fr">Thermodynamique</h3>
@@ -227,7 +230,7 @@
                 </div>
 
                 <div class="bento-item wide" 
-                     onclick="openModal('Manufacturing Database', 'Developed Access database and visualization tools for manufacturing data analysis at P&WC.', 'https://github.com/adamarzouni', 'images/project4.jpg')">
+                     onclick="openModal('Manufacturing Database', 'Developed Access database and visualization tools using VBA and SAP GUI API for manufacturing data analysis at P&WC.', 'https://github.com/adamarzouni', 'images/project4.jpg')">
                     <div class="card-content">
                         <h3 class="en">Data Systems</h3>
                         <h3 class="fr">Systèmes de Données</h3>
@@ -260,6 +263,12 @@
             </div>
         </section>
     </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>© 2026 Adam Arzouni. All rights reserved.</p>
+        </div>
+    </footer>
 
     <div id="projectModal" class="modal">
         <div class="modal-content">
