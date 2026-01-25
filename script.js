@@ -5,11 +5,7 @@ const logoImg = document.getElementById('nav-logo');
 themeBtn.addEventListener('click', () => {
     document.body.classList.toggle('light');
     const isLight = document.body.classList.contains('light');
-    
-    // Switch Icon
     themeBtn.querySelector('i').className = isLight ? 'fas fa-sun' : 'fas fa-moon';
-    
-    // Switch Nav Logo
     logoImg.src = isLight ? "images/logo-light.png" : "images/logo-dark.png";
 });
 
@@ -45,18 +41,26 @@ function closeMenu() {
     hamburgerBtn.querySelector('i').className = 'fas fa-bars';
 }
 
-// ENHANCED MODAL LOGIC (With Video Support & Bilingual Text & Password Protection)
+// ENHANCED MODAL LOGIC (Multi-Doc + Password)
 const modal = document.getElementById('projectModal');
 
-function openModal(titleEn, titleFr, descEn, descFr, link, gallery, doc, isProtected = false) {
+function openModal(titleEn, titleFr, descEn, descFr, link, gallery, docs) {
+    // Set Text
     document.getElementById('m-title-en').innerText = titleEn;
     document.getElementById('m-title-fr').innerText = titleFr;
-    
     document.getElementById('m-desc-en').innerHTML = descEn;
     document.getElementById('m-desc-fr').innerHTML = descFr;
     
-    document.getElementById('m-link').href = link;
+    // Set Github Link
+    const linkBtn = document.getElementById('m-link');
+    if (link && link !== '#') {
+        linkBtn.href = link;
+        linkBtn.style.display = 'inline-block';
+    } else {
+        linkBtn.style.display = 'none';
+    }
     
+    // 1. Setup Media
     const mediaContainer = document.getElementById('main-media-container');
     const firstMedia = gallery[0];
     renderMainMedia(mediaContainer, firstMedia);
@@ -72,32 +76,46 @@ function openModal(titleEn, titleFr, descEn, descFr, link, gallery, doc, isProte
         galleryDiv.appendChild(el);
     });
 
-    const docLink = document.getElementById('m-doc-link');
-    
-    // CLONE NODE TO REMOVE OLD LISTENERS
-    const newDocLink = docLink.cloneNode(true);
-    docLink.parentNode.replaceChild(newDocLink, docLink);
+    // 2. Setup Documents (Array)
+    const docsContainer = document.getElementById('m-docs-container');
+    docsContainer.innerHTML = ''; // Clear old buttons
 
-    if (doc) {
-        newDocLink.style.display = 'flex';
+    if (docs && docs.length > 0) {
+        document.getElementById('m-docs-section').style.display = 'block';
         
-        if (isProtected) {
-            newDocLink.href = "#"; 
-            newDocLink.onclick = (e) => {
-                e.preventDefault();
-                const password = prompt("Enter Password to view Technical Report:");
-                if (password === "admin") { // DEFAULT PASSWORD
-                    window.open(doc, '_blank');
-                } else {
-                    alert("Incorrect Password");
-                }
-            };
-        } else {
-            newDocLink.href = doc;
-            newDocLink.onclick = null;
-        }
+        docs.forEach(doc => {
+            const btn = document.createElement('a');
+            btn.className = 'doc-download-link';
+            btn.href = '#';
+            
+            // Bilingual Name based on current class of body (simplified here to show EN first)
+            // A better way is to put spans inside so CSS handles it
+            const nameEn = doc.nameEn || doc.name;
+            const nameFr = doc.nameFr || doc.name;
+            
+            btn.innerHTML = `<i class="fas fa-file-pdf"></i> 
+                             <span class="en">${nameEn}</span>
+                             <span class="fr">${nameFr}</span>
+                             ${doc.protected ? '<i class="fas fa-lock" style="margin-left:auto; font-size:0.8em; opacity:0.7;"></i>' : ''}`;
+
+            if (doc.protected) {
+                btn.onclick = (e) => {
+                    e.preventDefault();
+                    const password = prompt("Enter Password / Entrez le mot de passe:");
+                    if (password === "admin") {
+                        window.open(doc.url, '_blank');
+                    } else {
+                        alert("Incorrect Password / Mot de passe incorrect");
+                    }
+                };
+            } else {
+                btn.href = doc.url;
+                btn.target = "_blank";
+            }
+            docsContainer.appendChild(btn);
+        });
     } else {
-        newDocLink.style.display = 'none';
+        document.getElementById('m-docs-section').style.display = 'none';
     }
 
     modal.style.display = "block";
@@ -106,6 +124,8 @@ function openModal(titleEn, titleFr, descEn, descFr, link, gallery, doc, isProte
 
 function renderMainMedia(container, src) {
     container.innerHTML = '';
+    if (!src) return;
+    
     const isVideo = src.toLowerCase().endsWith('.mp4');
     
     if (isVideo) {
