@@ -45,7 +45,7 @@ function closeMenu() {
     hamburgerBtn.querySelector('i').className = 'fas fa-bars';
 }
 
-// ENHANCED MODAL LOGIC
+// ENHANCED MODAL LOGIC (With Video Support & Bilingual Text)
 const modal = document.getElementById('projectModal');
 
 function openModal(titleEn, titleFr, descEn, descFr, link, gallery, doc) {
