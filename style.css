@@ -36,7 +36,7 @@ nav {
     z-index: 1000; background: var(--bg-darker); border-bottom: 1px solid var(--line-color);
 }
 .logo-container img {
-    height: 150px; /* Adjust logo size */
+    height: 100px; /* Adjust logo size */
     width: auto;
     display: block;
 }
