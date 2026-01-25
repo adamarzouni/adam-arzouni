@@ -1,14 +1,20 @@
-// --- THEME TOGGLE ---
+// --- THEME TOGGLE & LOGO SWITCH ---
 const themeBtn = document.getElementById('theme-toggle');
+const logoImg = document.getElementById('nav-logo');
+
 themeBtn.addEventListener('click', () => {
     document.body.classList.toggle('light');
     const icon = themeBtn.querySelector('i');
+    
+    // Switch Icon and Logo based on Theme
     if (document.body.classList.contains('light')) {
         icon.classList.remove('fa-moon');
         icon.classList.add('fa-sun');
+        logoImg.src = "images/logo-light.png"; // Use the white background logo
     } else {
         icon.classList.remove('fa-sun');
         icon.classList.add('fa-moon');
+        logoImg.src = "images/logo-dark.png"; // Use the black background logo
     }
 });
 
@@ -36,6 +42,7 @@ function openModal(title, desc, link, imgSrc) {
     mTitle.innerText = title;
     mDesc.innerText = desc;
     mLink.href = link;
+    // Uses provided image or a fallback
     mImage.src = imgSrc || "https://via.placeholder.com/600x400?text=Project+Image";
     modal.style.display = "block";
     document.body.style.overflow = "hidden"; 
