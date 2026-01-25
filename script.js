@@ -45,10 +45,10 @@ function closeMenu() {
     hamburgerBtn.querySelector('i').className = 'fas fa-bars';
 }
 
-// ENHANCED MODAL LOGIC (With Video Support & Bilingual Text)
+// ENHANCED MODAL LOGIC (With Video Support & Bilingual Text & Password Protection)
 const modal = document.getElementById('projectModal');
 
-function openModal(titleEn, titleFr, descEn, descFr, link, gallery, doc) {
+function openModal(titleEn, titleFr, descEn, descFr, link, gallery, doc, isProtected = false) {
     document.getElementById('m-title-en').innerText = titleEn;
     document.getElementById('m-title-fr').innerText = titleFr;
     
@@ -73,11 +73,31 @@ function openModal(titleEn, titleFr, descEn, descFr, link, gallery, doc) {
     });
 
     const docLink = document.getElementById('m-doc-link');
+    
+    // CLONE NODE TO REMOVE OLD LISTENERS
+    const newDocLink = docLink.cloneNode(true);
+    docLink.parentNode.replaceChild(newDocLink, docLink);
+
     if (doc) {
-        docLink.href = doc;
-        docLink.style.display = 'flex';
+        newDocLink.style.display = 'flex';
+        
+        if (isProtected) {
+            newDocLink.href = "#"; 
+            newDocLink.onclick = (e) => {
+                e.preventDefault();
+                const password = prompt("Enter Password to view Technical Report:");
+                if (password === "admin") { // DEFAULT PASSWORD
+                    window.open(doc, '_blank');
+                } else {
+                    alert("Incorrect Password");
+                }
+            };
+        } else {
+            newDocLink.href = doc;
+            newDocLink.onclick = null;
+        }
     } else {
-        docLink.style.display = 'none';
+        newDocLink.style.display = 'none';
     }
 
     modal.style.display = "block";
