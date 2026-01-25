@@ -1,10 +1,7 @@
-// --- THEME TOGGLE (Fix) ---
+// --- THEME TOGGLE ---
 const themeBtn = document.getElementById('theme-toggle');
 themeBtn.addEventListener('click', () => {
-    // Toggle the class on body
     document.body.classList.toggle('light');
-    
-    // Switch Icon
     const icon = themeBtn.querySelector('i');
     if (document.body.classList.contains('light')) {
         icon.classList.remove('fa-moon');
@@ -28,7 +25,7 @@ langBtn.addEventListener('click', () => {
     }
 });
 
-// --- MODAL LOGIC (New) ---
+// --- MODAL LOGIC ---
 const modal = document.getElementById('projectModal');
 const mTitle = document.getElementById('m-title');
 const mDesc = document.getElementById('m-desc');
@@ -39,20 +36,16 @@ function openModal(title, desc, link, imgSrc) {
     mTitle.innerText = title;
     mDesc.innerText = desc;
     mLink.href = link;
-    
-    // Use the provided image, or a placeholder if empty
     mImage.src = imgSrc || "https://via.placeholder.com/600x400?text=Project+Image";
-    
     modal.style.display = "block";
-    document.body.style.overflow = "hidden"; // Stop background scrolling
+    document.body.style.overflow = "hidden"; 
 }
 
 function closeModal() {
     modal.style.display = "none";
-    document.body.style.overflow = "auto"; // Restore scrolling
+    document.body.style.overflow = "auto"; 
 }
 
-// Close modal if clicking outside content
 window.onclick = (event) => {
     if (event.target == modal) {
         closeModal();
