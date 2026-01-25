@@ -90,11 +90,6 @@ nav { position: fixed; top: 0; width: 100%; padding: 15px 5%; display: flex; jus
 .modal-divider { border: 0; height: 1px; background: var(--line-color); margin: 20px 0; }
 .desc-content p { line-height: 1.6; color: var(--text-dim); margin-bottom: 20px; }
 .desc-content strong { color: var(--text-white); }
-/* TEAM LIST STYLE */
-.team-list { list-style-type: none; padding-left: 0; margin-top: 5px; }
-.team-list li { margin-bottom: 5px; padding-left: 15px; position: relative; color: var(--text-dim); }
-.team-list li::before { content: "•"; color: var(--mustard); position: absolute; left: 0; }
-
 .github-btn { display: inline-block; padding: 10px 20px; background: #222; color: white; border-radius: 5px; text-decoration: none; margin-top: 10px; }
 
 /* Contact Form */
