@@ -26,26 +26,39 @@ langBtn.addEventListener('click', () => {
     }
 });
 
-// ENHANCED MODAL LOGIC
+// ENHANCED MODAL LOGIC (With Video Support & Bilingual Text)
 const modal = document.getElementById('projectModal');
 
-function openModal(title, desc, link, gallery, doc) {
-    document.getElementById('m-title').innerText = title;
-    document.getElementById('m-desc').innerText = desc;
+function openModal(titleEn, titleFr, descEn, descFr, link, gallery, doc) {
+    // Populate Bilingual Fields
+    document.getElementById('m-title-en').innerText = titleEn;
+    document.getElementById('m-title-fr').innerText = titleFr;
+    
+    // Allow HTML in description for breaks and strong tags
+    document.getElementById('m-desc-en').innerHTML = descEn;
+    document.getElementById('m-desc-fr').innerHTML = descFr;
+    
     document.getElementById('m-link').href = link;
     
-    // Set Main Image
-    const mainImg = document.getElementById('m-image');
-    mainImg.src = gallery[0];
+    // Setup Main Media (Video or Image)
+    const mediaContainer = document.getElementById('main-media-container');
+    const firstMedia = gallery[0];
+    
+    renderMainMedia(mediaContainer, firstMedia);
     
     // Build Gallery Thumbnails
     const galleryDiv = document.getElementById('m-gallery');
     galleryDiv.innerHTML = '';
+    
     gallery.forEach(src => {
-        const img = document.createElement('img');
-        img.src = src;
-        img.onclick = () => mainImg.src = src;
-        galleryDiv.appendChild(img);
+        const isVideo = src.toLowerCase().endsWith('.mp4');
+        const el = isVideo ? document.createElement('video') : document.createElement('img');
+        el.src = src;
+        
+        // On Click: Render to Main Container
+        el.onclick = () => renderMainMedia(mediaContainer, src);
+        
+        galleryDiv.appendChild(el);
     });
 
     // Handle Document Download Link
@@ -61,9 +74,30 @@ function openModal(title, desc, link, gallery, doc) {
     document.body.style.overflow = "hidden";
 }
 
+// Helper to Render Video or Image in Main Modal View
+function renderMainMedia(container, src) {
+    container.innerHTML = '';
+    const isVideo = src.toLowerCase().endsWith('.mp4');
+    
+    if (isVideo) {
+        const video = document.createElement('video');
+        video.src = src;
+        video.controls = true;
+        video.autoplay = true;
+        video.muted = true; // Required for autoplay
+        container.appendChild(video);
+    } else {
+        const img = document.createElement('img');
+        img.src = src;
+        container.appendChild(img);
+    }
+}
+
 function closeModal() {
     modal.style.display = "none";
     document.body.style.overflow = "auto";
+    // Stop video playback on close
+    document.getElementById('main-media-container').innerHTML = '';
 }
 
 window.onclick = (event) => {
