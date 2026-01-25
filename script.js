@@ -45,22 +45,25 @@ function closeMenu() {
 const modal = document.getElementById('projectModal');
 
 function openModal(titleEn, titleFr, descEn, descFr, link, gallery, docs) {
-    // Set Text
     document.getElementById('m-title-en').innerText = titleEn;
     document.getElementById('m-title-fr').innerText = titleFr;
     document.getElementById('m-desc-en').innerHTML = descEn;
     document.getElementById('m-desc-fr').innerHTML = descFr;
     
-    // Set Github Link
+    // Primary View Project Button logic
     const linkBtn = document.getElementById('m-link');
     if (link && link !== '#') {
         linkBtn.href = link;
         linkBtn.style.display = 'inline-block';
+        // If main link is a local file/pdf, we can check extension
+        // but typically 'link' is external or a primary doc. 
+        // If user requested password protection for main link, we'd handle here,
+        // but current instruction implies main link is direct for PDF unless docs array used.
     } else {
         linkBtn.style.display = 'none';
     }
     
-    // 1. Setup Media
+    // Setup Media
     const mediaContainer = document.getElementById('main-media-container');
     const firstMedia = gallery[0];
     renderMainMedia(mediaContainer, firstMedia);
@@ -76,9 +79,9 @@ function openModal(titleEn, titleFr, descEn, descFr, link, gallery, docs) {
         galleryDiv.appendChild(el);
     });
 
-    // 2. Setup Documents (Array)
+    // Setup Documents List
     const docsContainer = document.getElementById('m-docs-container');
-    docsContainer.innerHTML = ''; // Clear old buttons
+    docsContainer.innerHTML = ''; 
 
     if (docs && docs.length > 0) {
         document.getElementById('m-docs-section').style.display = 'block';
@@ -88,8 +91,6 @@ function openModal(titleEn, titleFr, descEn, descFr, link, gallery, docs) {
             btn.className = 'doc-download-link';
             btn.href = '#';
             
-            // Bilingual Name based on current class of body (simplified here to show EN first)
-            // A better way is to put spans inside so CSS handles it
             const nameEn = doc.nameEn || doc.name;
             const nameFr = doc.nameFr || doc.name;
             
