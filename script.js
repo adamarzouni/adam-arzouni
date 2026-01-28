@@ -51,7 +51,7 @@ const projectsData = {
         descEn: '<strong>Technology:</strong> Tizen OS, C++, Samsung Wearables<br><br><strong>Description:</strong> Design and development of a custom application for Tizen-based wearable devices. Focus on user interface optimization and sensor integration.',
         descFr: '<strong>Technologie :</strong> Tizen OS, C++, Samsung Wearables<br><br><strong>Description :</strong> Conception et développement d\'une application personnalisée pour les appareils portables Tizen. Accent sur l\'optimisation de l\'interface utilisateur et l\'intégration des capteurs.',
         link: '#',
-        gallery: ['images/tizen-main.jpg'],
+        gallery: ['images/Tizen.png'],
         docs: []
     },
     'phone': {
@@ -60,7 +60,7 @@ const projectsData = {
         descEn: '<strong>Project:</strong> Audio Guestbook Transformation<br><br><strong>Description:</strong> Converting a vintage rotary phone into a digital audio guestbook for weddings. Guests pick up the receiver, hear a pre-recorded greeting, and leave a voicemail message which is stored digitally.',
         descFr: '<strong>Projet :</strong> Livre d\'Or Audio<br><br><strong>Description :</strong> Transformation d\'un téléphone à cadran vintage en livre d\'or audio numérique pour les mariages. Les invités décrochent, entendent un message d\'accueil et laissent un message vocal enregistré numériquement.',
         link: '#',
-        gallery: ['images/wedding1.jpg', 'images/phone_main.jpg', 'images/wedding2.jpg'],
+        gallery: ['images/wedding1.jpg', 'images/wedding2.jpg'],
         docs: []
     }
 };
