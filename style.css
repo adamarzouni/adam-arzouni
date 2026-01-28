@@ -13,7 +13,7 @@ body.lang-en .fr, body.lang-fr .en { display: none !important; }
 * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
 body { background: var(--bg-main); color: var(--text-white); transition: 0.3s; overflow-x: hidden; }
 
-/* Navbar - High Z-Index for clickable buttons */
+/* Navbar */
 nav { position: fixed; top: 0; width: 100%; padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; z-index: 10000; background: var(--bg-darker); border-bottom: 1px solid var(--line-color); }
 .logo-container img { height: 70px; width: auto; }
 .nav-links a { color: var(--text-white); text-decoration: none; margin: 0 15px; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; }
@@ -47,7 +47,7 @@ nav { position: fixed; top: 0; width: 100%; padding: 15px 5%; display: flex; jus
     display: inline-flex; align-items: center; gap: 10px; 
     text-decoration: none; color: var(--text-white); 
     padding: 10px 25px; border: 1px solid var(--mustard); 
-    border-radius: 50px; margin-top: 250px; /* Moved Down 6cm */
+    border-radius: 50px; margin-top: 20px; /* RESTORED TO ORIGINAL */
     transition: 0.3s; 
 }
 .explore-btn.pulsing { animation: pulse-gold 2s infinite; }
