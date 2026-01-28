@@ -41,7 +41,7 @@ function closeMenu() {
     hamburgerBtn.querySelector('i').className = 'fas fa-bars';
 }
 
-// ENHANCED MODAL LOGIC (Multi-Doc + Password)
+// ENHANCED MODAL LOGIC
 const modal = document.getElementById('projectModal');
 
 function openModal(titleEn, titleFr, descEn, descFr, link, gallery, docs) {
@@ -50,20 +50,16 @@ function openModal(titleEn, titleFr, descEn, descFr, link, gallery, docs) {
     document.getElementById('m-desc-en').innerHTML = descEn;
     document.getElementById('m-desc-fr').innerHTML = descFr;
     
-    // Primary View Project Button logic
+    // View Project Button
     const linkBtn = document.getElementById('m-link');
     if (link && link !== '#') {
         linkBtn.href = link;
         linkBtn.style.display = 'inline-block';
-        // If main link is a local file/pdf, we can check extension
-        // but typically 'link' is external or a primary doc. 
-        // If user requested password protection for main link, we'd handle here,
-        // but current instruction implies main link is direct for PDF unless docs array used.
     } else {
         linkBtn.style.display = 'none';
     }
     
-    // Setup Media
+    // Media Setup
     const mediaContainer = document.getElementById('main-media-container');
     const firstMedia = gallery[0];
     renderMainMedia(mediaContainer, firstMedia);
@@ -79,7 +75,7 @@ function openModal(titleEn, titleFr, descEn, descFr, link, gallery, docs) {
         galleryDiv.appendChild(el);
     });
 
-    // Setup Documents List
+    // Docs Setup
     const docsContainer = document.getElementById('m-docs-container');
     docsContainer.innerHTML = ''; 
 
@@ -153,7 +149,7 @@ window.onclick = (event) => {
     if (event.target == modal) closeModal();
 };
 
-// CONTACT FORM SUBMISSION
+// CONTACT FORM
 const contactForm = document.getElementById('contact-form');
 const formStatus = document.getElementById('form-status');
 
@@ -176,7 +172,7 @@ contactForm.onsubmit = async (e) => {
     }
 };
 
-// SCROLL REVEAL ANIMATION
+// SCROLL REVEAL
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) entry.target.classList.add('active');
@@ -185,7 +181,7 @@ const observer = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-// BACK TO TOP BUTTON
+// BACK TO TOP
 const topBtn = document.getElementById('topBtn');
 window.onscroll = () => {
     topBtn.style.display = window.scrollY > 500 ? "block" : "none";
