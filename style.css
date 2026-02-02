@@ -47,7 +47,7 @@ nav { position: fixed; top: 0; width: 100%; padding: 15px 5%; display: flex; jus
     display: inline-flex; align-items: center; gap: 10px; 
     text-decoration: none; color: var(--text-white); 
     padding: 10px 25px; border: 1px solid var(--mustard); 
-    border-radius: 50px; margin-top: 20px; /* RESTORED TO ORIGINAL */
+    border-radius: 50px; margin-top: 20px; /* Original Position */
     transition: 0.3s; 
 }
 .explore-btn.pulsing { animation: pulse-gold 2s infinite; }
