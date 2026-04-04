@@ -7,6 +7,8 @@
     
     <link rel="icon" type="image/png" href="images/logo-dark.png">
     
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
@@ -57,17 +59,57 @@
 
     <main>
         <section id="home" class="hero">
+            <!-- Animated grain/mesh background overlay -->
+            <div class="hero-bg-overlay"></div>
+            
             <div class="hero-content">
+                <div class="hero-badge reveal">
+                    <span class="badge-dot"></span>
+                    <span class="en">Open to new opportunities</span>
+                    <span class="fr">Ouvert à de nouvelles opportunités</span>
+                </div>
+
                 <h1 class="reveal">
                     <span class="en">Engineering <br><span class="mustard-gradient">Aerospace Innovation.</span></span>
                     <span class="fr">Ingénierie & <br><span class="mustard-gradient">Innovation Aérospatiale.</span></span>
                 </h1>
-                <p class="reveal en">Mechanical Engineer specializing in Product Design, R&D, and Manufacturing Systems.</p>
-                <p class="reveal fr">Ingénieur Mécanique spécialisé en Conception de Produits, R&D et Systèmes de Fabrication.</p>
+                <p class="hero-sub reveal en">Mechanical Engineer · Pratt & Whitney Canada · Python, SAP GUI, Power BI Automation</p>
+                <p class="hero-sub reveal fr">Ingénieur Mécanique · Pratt & Whitney Canada · Python, SAP GUI, Automatisation Power BI</p>
                 
-                <div class="explore-container reveal">
-                    <a href="#about" class="explore-btn pulsing">
-                        <span class="en">View Profile</span><span class="fr">Voir Profil</span>
+                <!-- STATS BAR — instant credibility -->
+                <div class="stats-bar reveal">
+                    <div class="stat-item">
+                        <span class="stat-number">$15M</span>
+                        <span class="stat-label en">Monthly Sales Managed</span>
+                        <span class="stat-label fr">Ventes Mensuelles Gérées</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <span class="stat-number">4+</span>
+                        <span class="stat-label en">Years at P&WC</span>
+                        <span class="stat-label fr">Ans chez P&WC</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <span class="stat-number">$20K</span>
+                        <span class="stat-label en">Annual Savings via Automation</span>
+                        <span class="stat-label fr">Économies via Automatisation</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <span class="stat-number">2×</span>
+                        <span class="stat-label en">Award-Winning Projects</span>
+                        <span class="stat-label fr">Projets Primés</span>
+                    </div>
+                </div>
+
+                <div class="hero-ctas reveal">
+                    <a href="documents/Adam_Arzouni_CV.pdf" class="cta-primary mustard-bg" download>
+                        <i class="fas fa-download"></i>
+                        <span class="en">Download CV</span><span class="fr">Télécharger CV</span>
+                    </a>
+                    <a href="#work" class="cta-secondary pulsing">
+                        <span class="en">View Projects</span><span class="fr">Voir Projets</span>
                         <i class="fas fa-arrow-down"></i>
                     </a>
                 </div>
@@ -79,7 +121,25 @@
         <section id="about" class="section reveal">
             <div class="about-container">
                 <div class="about-image-wrapper">
-                    <img src="images/me.jpg" alt="Adam Arzouni" class="profile-img">
+                    <!-- loading="lazy" defers off-screen images -->
+                    <picture>
+                        <!-- WebP version loads first if browser supports it -->
+                        <source srcset="images/me.webp" type="image/webp">
+                        <img src="images/me.jpg" alt="Adam Arzouni" class="profile-img" loading="lazy" width="300" height="300">
+                    </picture>
+
+                    <!-- Social links under photo -->
+                    <div class="social-links">
+                        <a href="https://linkedin.com/in/adam-arzouni" target="_blank" class="social-btn" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://github.com/adam-arzouni" target="_blank" class="social-btn" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="mailto:adam.arzouni@example.com" class="social-btn" aria-label="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
                 </div>
                 
                 <div class="about-text">
@@ -87,18 +147,31 @@
                         <span class="en">About Me</span><span class="fr">À Propos</span>
                     </h2>
                     
+                    <!-- What I'm looking for — makes site active not passive -->
+                    <div class="looking-for-badge">
+                        <i class="fas fa-search" style="font-size:12px;"></i>
+                        <span class="en">Seeking roles in Product Design, Aerospace Systems, or Technical Operations</span>
+                        <span class="fr">Recherche des rôles en Conception de Produits, Systèmes Aérospatiale ou Opérations Techniques</span>
+                    </div>
+
                     <div class="bio-text">
                         <p class="en">I operate at the intersection of <strong>technical engineering</strong> and <strong>commercial success</strong>. With a track record managing <strong>$15M in monthly sales</strong> and driving strategic cost reductions at Pratt & Whitney Canada, I don't just execute designs—I build systems that increase <strong>profitability</strong>. My strength lies in bridging the gap between R&D complex problem-solving and operational efficiency. If you need an engineer who understands the bottom line and delivers measurable financial impact through automation and precision, I am that candidate.</p>
                         
                         <p class="fr">J'opère à l'intersection de l'<strong>ingénierie technique</strong> et du <strong>succès commercial</strong>. Avec une expérience de gestion de <strong>15 M$ de ventes mensuelles</strong> et de réduction stratégique des coûts chez Pratt & Whitney Canada, je ne me contente pas d'exécuter des conceptions : je crée des systèmes qui augmentent la <strong>rentabilité</strong>. Ma force réside dans ma capacité à lier la R&D et l'efficacité opérationnelle. Si vous cherchez un ingénieur qui comprend les enjeux financiers et livre un impact mesurable grâce à l'automatisation et la précision, je suis ce candidat.</p>
                     </div>
 
+                    <!-- MORE SPECIFIC skill tags — searchable, impressive -->
                     <div class="skills-box">
                         <span class="skill-tag">Mechanical Engineering</span>
                         <span class="skill-tag">Aerospace Thermodynamics</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">SAP GUI Scripting</span>
+                        <span class="skill-tag">Power BI</span>
                         <span class="skill-tag">System Automation</span>
                         <span class="skill-tag">Engineering Design</span>
                         <span class="skill-tag">R&D</span>
+                        <span class="skill-tag">VBA / Access</span>
+                        <span class="skill-tag">CAD / CATIA</span>
                     </div>
 
                     <div class="cv-download-box">
@@ -201,67 +274,18 @@
 
         <div class="horizontal-line"></div>
 
+        <!-- 
+            PROJECTS SECTION
+            ================
+            NO HTML NEEDED HERE — cards are auto-generated from projectsData in script.js
+            To add a new project: add one object to projectsData in script.js. Done.
+        -->
         <section id="work" class="section reveal">
             <h2 class="section-header mustard-text">
                 <span class="en">Selected Projects</span><span class="fr">Projets Sélectionnés</span>
             </h2>
-            <div class="bento-grid">
-                
-                <div class="bento-item large" style="background-image: url('images/PI1.jpg');" onclick="openProject('phoenix')">
-                    <div class="card-overlay"></div>
-                    <div class="card-content">
-                        <h3 class="en">Phoenix Drone</h3><h3 class="fr">Drone Phoenix</h3>
-                        <p class="en">1st Prize Winner</p><p class="fr">Gagnant 1er Prix</p>
-                        <span class="click-hint"><i class="fas fa-plus"></i> <span class="en">Click for Details</span><span class="fr">Voir Détails</span></span>
-                    </div>
-                </div>
-
-                <div class="bento-item" style="background-image: url('images/PI3.jpg');" onclick="openProject('sleepsafe')">
-                    <div class="card-overlay"></div>
-                    <div class="card-content">
-                        <h3 class="en">SleepSafe Monitor</h3><h3 class="fr">Moniteur SleepSafe</h3>
-                        <p>Smart Baby Monitoring</p>
-                        <span class="click-hint"><i class="fas fa-plus"></i> <span class="en">Click for Details</span><span class="fr">Voir Détails</span></span>
-                    </div>
-                </div>
-
-                <div class="bento-item" style="background-image: url('images/pi23.jpg');" onclick="openProject('robot')">
-                    <div class="card-overlay"></div>
-                    <div class="card-content">
-                        <h3 class="en">Delivery Robot</h3><h3 class="fr">Robot Livreur</h3>
-                        <p>Autonomous Logistics</p>
-                        <span class="click-hint"><i class="fas fa-plus"></i> <span class="en">Click for Details</span><span class="fr">Voir Détails</span></span>
-                    </div>
-                </div>
-
-                <div class="bento-item wide" style="background-image: url('images/riaupel-main.jpg');" onclick="openProject('riaupel')">
-                    <div class="card-overlay"></div>
-                    <div class="card-content">
-                        <h3 class="en">Robot Energy Connector</h3><h3 class="fr">Connecteur Énergie Robot</h3>
-                        <p>Hydro-Quebec/IREQ</p>
-                        <span class="click-hint"><i class="fas fa-plus"></i> <span class="en">Click for Details</span><span class="fr">Voir Détails</span></span>
-                    </div>
-                </div>
-
-                <div class="bento-item" style="background-image: url('images/tizen-main.jpg');" onclick="openProject('tizen')">
-                    <div class="card-overlay"></div>
-                    <div class="card-content">
-                        <h3 class="en">Tizen App Creation</h3><h3 class="fr">Création App Tizen</h3>
-                        <p>Wearable Development</p>
-                        <span class="click-hint"><i class="fas fa-plus"></i> <span class="en">Click for Details</span><span class="fr">Voir Détails</span></span>
-                    </div>
-                </div>
-
-                <div class="bento-item" style="background-image: url('images/wedding1.jpg');" onclick="openProject('phone')">
-                    <div class="card-overlay"></div>
-                    <div class="card-content">
-                        <h3 class="en">Rotary Phone</h3><h3 class="fr">Téléphone Rotatif</h3>
-                        <p class="en">Audio Guestbook</p><p class="fr">Livre d'Or Audio</p>
-                        <span class="click-hint"><i class="fas fa-plus"></i> <span class="en">Click for Details</span><span class="fr">Voir Détails</span></span>
-                    </div>
-                </div>
-
-            </div>
+            <!-- Grid is injected by JS from projectsData -->
+            <div class="bento-grid" id="projects-grid"></div>
         </section>
 
         <div class="horizontal-line"></div>
@@ -274,6 +298,19 @@
                 </h2>
                 <p class="en contact-subtext">I am always looking for ambitious projects and teams that value precision and innovation. Whether you have a challenging engineering problem or a vision that needs technical leadership, let's connect and make it a reality.</p>
                 <p class="fr contact-subtext">Je suis toujours à la recherche de projets ambitieux et d'équipes qui valorisent la précision et l'innovation. Si vous avez un défi technique ou une vision à réaliser, connectons-nous.</p>
+
+                <!-- Social links in contact section too -->
+                <div class="contact-socials">
+                    <a href="https://linkedin.com/in/adam-arzouni" target="_blank" class="social-btn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://github.com/adam-arzouni" target="_blank" class="social-btn">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="mailto:adam.arzouni@example.com" class="social-btn">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
                 
                 <form id="contact-form" action="https://formspree.io/f/xzdejweq" method="POST" class="contact-form">
                     <div class="input-group">
