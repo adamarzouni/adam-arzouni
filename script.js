@@ -51,7 +51,7 @@ const projectsData = {
         descEn: '<strong>Technology:</strong> Tizen OS, C++, Samsung Wearables<br><br><strong>Description:</strong> Design and development of a custom application for Tizen-based devices.',
         descFr: '<strong>Technologie :</strong> Tizen OS, C++, Samsung Wearables<br><br><strong>Description :</strong> Conception et développement d\'une application personnalisée pour les appareils portables Tizen.',
         link: '#',
-        gallery: ['images/tizen-main.jpg'],
+        gallery: ['images/tizen-main.jpg','images/Capture.PNG','Startup.PNG'],
         docs: [
          {nameEn: 'Tizen App (Zip)', nameFr: 'Tizen App (Zip)', url: 'documents/tizen.zip', protected: true }
         ]
@@ -62,7 +62,7 @@ const projectsData = {
         descEn: '<strong>Project:</strong> Audio Guestbook Transformation<br><br><strong>Description:</strong> Converting a vintage rotary phone into a digital audio guestbook for weddings. Guests pick up the receiver, hear a pre-recorded greeting, and leave a voicemail message which is stored digitally.',
         descFr: '<strong>Projet :</strong> Livre d\'Or Audio<br><br><strong>Description :</strong> Transformation d\'un téléphone à cadran vintage en livre d\'or audio numérique pour les mariages. Les invités décrochent, entendent un message d\'accueil et laissent un message vocal enregistré numériquement.',
         link: '#',
-        gallery: ['images/wedding1.jpg', 'images/phone_main.jpg', 'images/wedding2.jpg'],
+        gallery: ['images/wedding1.jpg', 'images/phone_main.jpeg', 'images/wedding2.jpg'],
         
         docs: [
             {nameEn: 'Project Files (Zip)', nameFr: 'Fichiers du Projet (Zip)', url: 'documents/rotary-phone.zip', protected: true }
