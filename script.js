@@ -48,11 +48,13 @@ const projectsData = {
     'tizen': {
         titleEn: 'Tizen App Creation',
         titleFr: 'Création d\'App Tizen',
-        descEn: '<strong>Technology:</strong> Tizen OS, C++, Samsung Wearables<br><br><strong>Description:</strong> Design and development of a custom application for Tizen-based wearable devices. Focus on user interface optimization and sensor integration.',
-        descFr: '<strong>Technologie :</strong> Tizen OS, C++, Samsung Wearables<br><br><strong>Description :</strong> Conception et développement d\'une application personnalisée pour les appareils portables Tizen. Accent sur l\'optimisation de l\'interface utilisateur et l\'intégration des capteurs.',
+        descEn: '<strong>Technology:</strong> Tizen OS, C++, Samsung Wearables<br><br><strong>Description:</strong> Design and development of a custom application for Tizen-based devices.',
+        descFr: '<strong>Technologie :</strong> Tizen OS, C++, Samsung Wearables<br><br><strong>Description :</strong> Conception et développement d\'une application personnalisée pour les appareils portables Tizen.',
         link: '#',
         gallery: ['images/tizen-main.jpg'],
-        docs: []
+        docs: [
+         {nameEn: 'Tizen App (Zip)', nameFr: 'Tizen App (Zip)', url: 'documents/tizen.zip', protected: true }
+        ]
     },
     'phone': {
         titleEn: 'Wedding Rotary Phone',
@@ -61,7 +63,10 @@ const projectsData = {
         descFr: '<strong>Projet :</strong> Livre d\'Or Audio<br><br><strong>Description :</strong> Transformation d\'un téléphone à cadran vintage en livre d\'or audio numérique pour les mariages. Les invités décrochent, entendent un message d\'accueil et laissent un message vocal enregistré numériquement.',
         link: '#',
         gallery: ['images/wedding1.jpg', 'images/phone_main.jpg', 'images/wedding2.jpg'],
-        docs: []
+        
+        docs: [
+            {nameEn: 'Project Files (Zip)', nameFr: 'Fichiers du Projet (Zip)', url: 'documents/rotary-phone.zip', protected: true }
+        ]
     }
 };
 
