@@ -51,7 +51,7 @@ const projectsData = {
         descEn: '<strong>Technology:</strong> Tizen OS, C++, Samsung Wearables<br><br><strong>Description:</strong> Design and development of a custom application for Tizen-based devices.',
         descFr: '<strong>Technologie :</strong> Tizen OS, C++, Samsung Wearables<br><br><strong>Description :</strong> Conception et développement d\'une application personnalisée pour les appareils portables Tizen.',
         link: '#',
-        gallery: ['images/tizen-main.jpg','images/Capture.PNG','Startup.PNG'],
+        gallery: ['images/tizen-main.jpg','images/Capture.PNG','images/Startup.PNG'],
         docs: [
          {nameEn: 'Tizen App (Zip)', nameFr: 'Tizen App (Zip)', url: 'documents/tizen.zip', protected: true }
         ]
