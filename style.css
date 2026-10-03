@@ -154,8 +154,13 @@ footer { padding: 40px; text-align: center; border-top: 1px solid var(--line-col
     .cv-download-box { margin: 20px auto; }
     .bento-grid { grid-template-columns: 1fr; }
     .bento-item.large, .bento-item.wide { grid-column: span 1; grid-row: span 1; }
+    .modal { overflow-y: auto; -webkit-overflow-scrolling: touch; overscroll-behavior: contain; }
+    .modal-content { margin: 2vh auto; width: 95%; max-height: none; overflow: hidden; }
     .modal-body-complex { grid-template-columns: 1fr; }
-    .modal-visuals { max-height: 300px; }
-    .modal-content { margin: 2vh auto; width: 95%; max-height: 95vh; }
-    .input-group { flex-direction: column; }
+    .modal-visuals,
+    .modal-details { max-height: none; overflow-y: visible; }
+    .modal-details { padding: 25px 20px 40px; }
+
+    /* keep the close button reachable while scrolling */
+    .close-modal { position: fixed; top: 15px; right: 20px; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.7); border-radius: 50%; font-size: 1.8rem; line-height: 1; }
 }
